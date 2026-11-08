@@ -316,6 +316,59 @@ input[type=checkbox] {accent-color:#eaeaea}
 @media (max-width:960px) and (min-width:701px){.logo{justify-content:center;padding:4px 0 0}.brandLogoImg{width:55px;height:47px;flex-basis:55px}}
 @media (max-width:700px){.hero{grid-template-columns:1fr}.heroVisual{order:1;height:108px;padding:17px 16px 0;overflow:visible}.heroVisualPanel{max-width:200px;min-height:0;width:200px;height:96px;aspect-ratio:auto;transform:none}.heroMascot{max-height:98px;width:100%}.heroText{order:2;padding-top:14px}.continueChat{min-height:35px}}
 @media (max-width:370px){.heroVisual{height:91px;padding-top:12px}.heroVisualPanel{width:170px;height:80px}.heroMascot{max-height:80px}}
+/* Featured episode — one swipeable card; the rest of the dashboard is unchanged. */
+#spotlightSection{margin:34px 0 8px}
+#spotlightSection.hide{display:none!important}
+#spotlightSection .sectionBar{margin:0 0 15px;align-items:end}
+.spotlightKicker{font-weight:800;text-transform:uppercase;letter-spacing:2.2px;color:#888;font-size:10px;display:block;margin-bottom:7px}
+.spotlightPicker{display:flex;align-items:center;gap:9px;color:#a7a7a7;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.6px}
+.spotlightPicker select{max-width:218px;min-height:41px;color:#fff;background:#191919;border:1px solid #383838;border-radius:12px;padding:8px 31px 8px 11px;text-overflow:ellipsis;white-space:nowrap;font-weight:750;letter-spacing:0;text-transform:none}
+.spotlightShell{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,380px);gap:clamp(20px,4vw,60px);align-items:center;overflow:hidden;position:relative;border:1px solid #343434;border-radius:26px;padding:26px clamp(19px,3.4vw,42px);min-height:400px;background:radial-gradient(480px 320px at 77% 56%,#242424 0%,transparent 70%),linear-gradient(137deg,#111 5%,#080808 78%)}
+.spotlightShell:before{content:'01';position:absolute;right:20px;top:-35px;font:900 clamp(110px,18vw,240px)/1 'Outfit',sans-serif;letter-spacing:-12px;color:#fff;opacity:.035;pointer-events:none}
+.spotlightIntro{position:relative;z-index:1;min-width:0}
+.spotlightOverline{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;font-size:10px;font-weight:900;letter-spacing:2.2px;color:#dadada;text-transform:uppercase}
+.spotlightOverline:before{content:'';width:7px;height:7px;border-radius:50%;background:#f5f5f5}
+.spotlightName{margin:0 0 10px;font:900 clamp(29px,3.7vw,54px)/1 'Outfit',sans-serif;letter-spacing:-1.7px;overflow-wrap:anywhere}
+.spotlightEpisode{font:800 clamp(21px,2.6vw,34px)/1.15 'Outfit',sans-serif;color:#bfbfbf;letter-spacing:-.7px;margin:0 0 20px}
+.spotlightDescription{max-width:400px;font-size:13px;line-height:1.65;color:#a3a3a3;margin:0 0 20px}
+.spotlightProgress{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 9px;color:#aaa;font-size:11px;font-weight:750}
+.spotlightProgress strong{font-size:14px;color:#fff}
+.spotlightMeter{height:6px;width:min(100%,410px);border-radius:99px;background:#363636;overflow:hidden;margin:0 0 25px}
+.spotlightMeter span{display:block;height:100%;border-radius:99px;background:#f5f5f5;transition:width .25s}
+.spotlightInstruction{display:flex;flex-wrap:wrap;gap:10px 16px;color:#bdbdbd;font-size:11px;font-weight:750}
+.spotlightInstruction span{display:inline-flex;align-items:center;gap:6px}
+.spotlightInstruction b{font-size:16px;color:#fff}
+.spotlightStack{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;min-width:0;padding:16px 0 0}
+.spotlightCardZone{width:min(100%,340px);position:relative;isolation:isolate}
+.spotlightCardZone:before,.spotlightCardZone:after{content:'';position:absolute;inset:10px 3% 0;transform:translateY(-9px) scale(.968) rotate(-3deg);border:1px solid #353535;border-radius:21px;background:#171717;z-index:-1}
+.spotlightCardZone:after{transform:translateY(-16px) scale(.93) rotate(4deg);background:#202020;z-index:-2}
+.spotlightCard{position:relative;width:100%;aspect-ratio:4/4.7;border:1px solid #4a4a4a;border-radius:22px;overflow:hidden;background:radial-gradient(circle at 45% 30%,#444,#171717 70%);cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;will-change:transform,opacity;transition:transform .25s cubic-bezier(.18,.8,.22,1),opacity .2s,border-color .2s;box-shadow:0 26px 50px #0009;outline-offset:5px}
+.spotlightCard:focus-visible{outline:2px solid #fff}
+.spotlightCard.dragging{transition:none;cursor:grabbing}
+.spotlightCard img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none;filter:none!important;opacity:1!important}
+.spotlightCard:after{content:'';pointer-events:none;position:absolute;inset:0;background:linear-gradient(180deg,#0008 0%,transparent 33%,#0002 50%,#000e 100%)}
+.spotlightCardTop,.spotlightCardBottom{position:absolute;z-index:2;left:17px;right:17px;pointer-events:none}
+.spotlightCardTop{top:16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.spotlightCardLabel,.spotlightCardCount{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:900;color:white;padding:9px 11px;border-radius:12px;background:#0808089e;backdrop-filter:blur(10px);border:1px solid #ffffff3d}
+.spotlightCardBottom{bottom:19px;color:white;text-shadow:0 2px 15px #000}
+.spotlightCardBottom small{display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.6px;opacity:.8}
+.spotlightCardBottom strong{display:block;font:900 clamp(27px,3vw,39px)/1 'Outfit',sans-serif;letter-spacing:-1px;margin:6px 0}
+.spotlightCardBottom em{font-style:normal;font-size:12px;font-weight:800}
+.spotlightStamp{position:absolute;z-index:4;top:26%;left:10%;font:900 clamp(28px,4.5vw,40px)/1 'Outfit',sans-serif;letter-spacing:1px;transform:rotate(-14deg);border:4px solid #fff;border-radius:12px;padding:10px 13px;color:#fff;background:#0009;opacity:0;pointer-events:none;transition:opacity .1s}
+.spotlightStamp.defer{left:auto;right:6%;transform:rotate(13deg)}
+.spotlightCard[data-direction='right'] .spotlightStamp.seen,.spotlightCard[data-direction='left'] .spotlightStamp.defer{opacity:1}
+.spotlightButtons{width:min(100%,340px);display:grid;grid-template-columns:1fr 1.15fr;gap:10px;margin-top:20px}
+.spotlightButton{display:flex;justify-content:center;align-items:center;gap:8px;border-radius:13px;min-height:48px;padding:12px 9px;border:1px solid #424242;background:#1c1c1c;color:#eee;font:850 12px 'DM Sans',sans-serif;transition:background .15s,transform .15s}
+.spotlightButton:hover{background:#333;transform:translateY(-1px)}
+.spotlightButton:active{transform:scale(.97)}
+.spotlightButton.seen{border-color:#fff;background:#eee;color:#101010}
+.spotlightButton.seen:hover{background:#fff}
+.spotlightButton:disabled{opacity:.5;cursor:default}
+.spotlightNote{margin:10px 0 0;color:#7e7e7e;font-size:10px;line-height:1.5;text-align:center}
+@media(max-width:850px){.spotlightShell{grid-template-columns:minmax(0,1fr) minmax(220px,310px);gap:15px;padding:24px}.spotlightName{font-size:32px}.spotlightEpisode{font-size:21px}}
+@media(max-width:700px){#spotlightSection{margin-top:25px}#spotlightSection .sectionBar{align-items:flex-start;gap:10px;flex-wrap:wrap}.spotlightPicker{width:100%;justify-content:space-between}.spotlightPicker select{flex:1;max-width:230px}.spotlightShell{grid-template-columns:1fr;gap:18px;min-height:0;padding:23px 17px 25px;border-radius:22px}.spotlightIntro{text-align:left}.spotlightName{font-size:32px}.spotlightEpisode{margin-bottom:14px}.spotlightDescription{margin-bottom:15px}.spotlightMeter{margin-bottom:18px}.spotlightStack{padding-top:6px}.spotlightCardZone,.spotlightButtons{width:min(100%,300px)}.spotlightCard{aspect-ratio:4/4.35}.spotlightButtons{margin-top:14px}.spotlightNote{margin-top:9px}.spotlightInstruction{gap:7px 15px}}
+@media(prefers-reduced-motion:reduce){.spotlightCard,.spotlightButton,.spotlightMeter span{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -337,6 +390,11 @@ input[type=checkbox] {accent-color:#eaeaea}
      <section class="hero"><div class="heroBG" id="heroBG"></div><div class="heroText"><div class="eyebrow">YOUR ANIME. YOUR PROGRESS.</div><h1>I tuoi anime.<br><em>Tutto sotto controllo.</em></h1><p>Una sola lista per le serie che segui, gli episodi visti e quelli ancora da guardare. Con il doppiaggio italiano sempre in evidenza.</p><div class="heroBtns"><button class="btn primary" id="heroExplore">Esplora la libreria ↗</button><button class="btn ghost" id="heroSync">Crunchyroll &amp; importazione</button></div></div><div class="heroVisual"><div class="heroVisualPanel"><img class="heroMascot" src="assets/dubtrack-icon.svg?v=4" alt="Espressione anime minimalista"></div></div></section>
    </section>
    <section id="stats" class="stats"></section>
+   <section id="spotlightSection" class="hide" aria-label="Episodio in evidenza">
+     <div class="sectionBar"><div><span class="spotlightKicker">SWIPE / TRACK</span><h2 class="sectionTitle">Episodio in evidenza</h2></div>
+     <label class="spotlightPicker" for="spotlightSelect">In evidenza <select id="spotlightSelect" aria-label="Scegli la serie in evidenza"></select></label></div>
+     <div id="spotlightContent" class="spotlightShell" aria-live="polite"></div>
+   </section>
    <section id="continueSection"><div class="sectionBar"><h2 class="sectionTitle">Continua a guardare</h2><button class="textBtn" id="continueAll">Tutte le serie ↗</button></div><div class="continueRow" id="continueRow"></div></section>
    <section id="librarySection"><div class="libraryHead"><div><div class="sectionOverline">MY COLLECTION</div><h2 class="sectionTitle" id="collectionTitle">La tua collezione <span id="count"></span></h2></div><div class="actionLine"><button class="btn small" id="backupBtn">↓ Backup</button><button class="btn small primary" id="addBtn">+ Aggiungi anime</button></div></div>
     <div class="filterLine"><div class="chips" id="chips"></div><select id="sort" class="order" aria-label="Ordina anime"><option value="order">Consigliati</option><option value="recent">Modificati di recente</option><option value="title">Titolo A – Z</option><option value="progress">Avanzamento</option></select></div>
@@ -469,6 +527,91 @@ function mark(s){s.modified=Date.now();save();render()}
 function navButton(v,label,icon){const count=v==='watching'?data.filter(s=>currentState(s)==='watching').length:v==='todo'?data.filter(s=>currentState(s)==='todo').length:v==='done'?data.filter(s=>currentState(s)==='done').length:null;return `<button class="navItem ${view===v?'active':''}" data-view="${v}">${I(icon)}<span>${label}</span>${count!==null?`<small class="navCount">${count}</small>`:''}</button>`}
 function renderNav(){const list=[['home','Dashboard','home'],['all','La mia lista','grid'],['watching','In visione','play'],['todo','Da iniziare','bookmark'],['done','Completati','check'],['dub','Audio italiano','headphones']];$('desktopNav').innerHTML=list.map(x=>navButton(...x)).join('');$('mobileNav').innerHTML=[list[0],list[1],list[2],list[4],list[5]].map(x=>navButton(...x)).join('');document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setView(b.dataset.view));}
 function setView(v){view=v;chip='all';render();window.scrollTo({top:0,behavior:'smooth'})}
+// A single spotlight card is enabled on the home dashboard; all other series keep their existing controls.
+const SPOTLIGHT_KEY='dubtrack_spotlight_id_v1';
+let spotlightId=(()=>{try{return localStorage.getItem(SPOTLIGHT_KEY)||''}catch(_){return ''}})();
+function renderSpotlight(ongoing){
+  const section=$('spotlightSection');
+  const featured=ongoing.find(s=>s.id===spotlightId) || ongoing[0];
+  if(view!=='home'||!featured){section.classList.add('hide');return}
+  const next=nextUnwatched(featured);
+  if(!next){section.classList.add('hide');return}
+  section.classList.remove('hide');
+  const selector=$('spotlightSelect');
+  selector.innerHTML=ongoing.map(s=>`<option value="${safe(s.id)}" ${s.id===featured.id?'selected':''}>${safe(s.title)}</option>`).join('');
+  selector.onchange=()=>{spotlightId=selector.value;try{localStorage.setItem(SPOTLIGHT_KEY,spotlightId)}catch(_){}render()};
+  const p=progress(featured);
+  const img=coverImg(featured);
+  const n=`S${String(next.season+1).padStart(2,'0')} · E${String(next.episode).padStart(2,'0')}`;
+  $('spotlightContent').innerHTML=`<div class="spotlightIntro">
+    <span class="spotlightOverline">Anime in visione</span>
+    <h3 class="spotlightName">${safe(featured.title)}</h3>
+    <p class="spotlightEpisode">Prossimo: ${n}</p>
+    <p class="spotlightDescription">Scorri la scheda verso destra dopo aver visto l’episodio. Verso sinistra rimane da vedere: il progresso non cambia.</p>
+    <div class="spotlightProgress"><span>${p.seen} / ${p.total} episodi visti</span><strong>${p.p}%</strong></div>
+    <div class="spotlightMeter"><span style="width:${p.p}%"></span></div>
+    <div class="spotlightInstruction"><span><b>←</b> Non ancora</span><span><b>→</b> Visto</span></div>
+  </div><div class="spotlightStack"><div class="spotlightCardZone">
+     <div id="spotlightCard" class="spotlightCard" role="group" tabindex="0" aria-label="${safe(featured.title)}, stagione ${next.season+1}, episodio ${next.episode}. Scorri a destra per segnare visto, a sinistra per lasciare da vedere.">
+       ${img}
+       <div class="spotlightCardTop"><span class="spotlightCardLabel">Prossimo episodio</span><span class="spotlightCardCount">${p.seen} / ${p.total}</span></div>
+       <span class="spotlightStamp seen">VISTO ✓</span><span class="spotlightStamp defer">NON ORA</span>
+       <div class="spotlightCardBottom"><small>In evidenza</small><strong>${n}</strong><em>${safe(featured.title)}</em></div>
+     </div></div><div class="spotlightButtons">
+       <button type="button" class="spotlightButton" id="spotlightDefer" aria-label="Lascia l'episodio ${next.episode} da vedere">✕ Non ancora</button>
+       <button type="button" class="spotlightButton seen" id="spotlightSeen" aria-label="Segna l'episodio ${next.episode} come visto">✓ Visto</button>
+     </div><p class="spotlightNote">Solo l’anime in evidenza · Swipe o pulsanti</p></div>`;
+  const card=$('spotlightCard');
+  const seenBtn=$('spotlightSeen'), deferBtn=$('spotlightDefer');
+  let activePointer=null,startedX=0,startedY=0,offsetX=0,offsetY=0,busy=false;
+  function reset(){card.style.transform='';card.style.opacity='';card.removeAttribute('data-direction');card.classList.remove('dragging')}
+  function finish(direction){
+    if(busy)return;
+    busy=true;
+    activePointer=null;
+    card.classList.remove('dragging');
+    seenBtn.disabled=true;deferBtn.disabled=true;
+    card.dataset.direction=direction;
+    card.style.transform=`translate3d(${direction==='right'?'130%':'-130%'},0,0) rotate(${direction==='right'?15:-15}deg)`;
+    card.style.opacity='0';
+    window.setTimeout(()=>{
+      if(direction==='right'){
+        const item=data.find(s=>s.id===featured.id);
+        const pending=item&&nextUnwatched(item);
+        if(item&&currentState(item)==='watching'&&pending&&pending.season===next.season&&pending.episode===next.episode)quickMarkNext(featured.id);
+        else render();
+      }else{
+        reset();busy=false;seenBtn.disabled=false;deferBtn.disabled=false;
+      }
+    },210);
+  }
+  card.addEventListener('pointerdown',e=>{
+    if(busy||activePointer!==null||(e.pointerType==='mouse'&&e.button!==0))return;
+    activePointer=e.pointerId;startedX=e.clientX;startedY=e.clientY;offsetX=0;offsetY=0;
+    card.classList.add('dragging');
+    try{card.setPointerCapture(e.pointerId)}catch(_){}
+  });
+  card.addEventListener('pointermove',e=>{
+    if(activePointer!==e.pointerId||busy)return;
+    offsetX=e.clientX-startedX;offsetY=e.clientY-startedY;
+    if(Math.abs(offsetY)>Math.abs(offsetX)*1.6&&Math.abs(offsetY)>13)return;
+    const degree=Math.max(-14,Math.min(14,offsetX/18));
+    card.style.transform=`translate3d(${offsetX}px,${Math.max(-20,Math.min(20,offsetY/6))}px,0) rotate(${degree}deg)`;
+    card.dataset.direction=offsetX>28?'right':offsetX< -28?'left':'';
+  });
+  card.addEventListener('pointerup',e=>{
+    if(activePointer!==e.pointerId||busy)return;
+    activePointer=null;
+    const dx=e.clientX-startedX;
+    const dy=e.clientY-startedY;
+    if(Math.abs(dx)>Math.max(70,card.offsetWidth*.24)&&Math.abs(dx)>Math.abs(dy)*1.15){finish(dx>0?'right':'left')}else{reset()}
+  });
+  card.addEventListener('pointercancel',()=>{activePointer=null;if(!busy)reset()});
+  card.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();finish('right')}else if(e.key==='ArrowLeft'){e.preventDefault();finish('left')}});
+  seenBtn.onclick=()=>finish('right');
+  deferBtn.onclick=()=>finish('left');
+}
+
 function render(){renderNav();const p=data.map(progress),totalWatched=p.reduce((n,v)=>n+v.seen,0),totalBought=p.reduce((n,v)=>n+v.bought,0),inprogress=data.filter(s=>currentState(s)==='watching').length;const stats=[{n:data.length,t:'Serie in collezione',icon:'grid'},{n:totalWatched,t:'Episodi guardati',icon:'play'},{n:inprogress,t:'Serie in corso',icon:'layers'},{n:totalBought,t:'Episodi acquistati',icon:'bookmark'}];$('stats').innerHTML=stats.map(s=>`<div class="stat"><div class="big">${s.n}</div><div class="title">${s.t}</div>${I(s.icon)}</div>`).join('');$('homeSections').classList.toggle('hide',view!=='home');$('continueSection').classList.toggle('hide',view!=='home');$('heroBG').style.backgroundImage=`url("${COVERS.gachiakuta}")`;
  const ongoing=data.filter(s=>currentState(s)==='watching').sort((a,b)=>(b.modified||0)-(a.modified||0));
  $('continueRow').innerHTML=ongoing.length?ongoing.slice(0,6).map(s=>{
@@ -476,6 +619,7 @@ function render(){renderNav();const p=data.map(progress),totalWatched=p.reduce((
    return `<article class="continueCard" aria-label="${safe(s.title)}"><div class="continuePic">${coverImg(s)}</div><div class="continueMeta"><div class="name">${safe(s.title)}</div><span class="next">${p.seen} di ${p.total} episodi visti</span><div class="bar"><span style="width:${p.p}%"></span></div><span class="percentage">${p.p}% completato</span>${next?`<button type="button" class="quickMark" data-quick="${safe(s.id)}" aria-label="${safe(label)} di ${safe(s.title)}">${safe(label)} <span aria-hidden="true">✓</span></button>`:''}<button type="button" class="continueOpen" data-open="${safe(s.id)}">Apri la scheda ↗</button></div></article>`;
  }).join(''):`<div class="hint" style="grid-column:1/-1"><strong>Qui vedrai gli anime in visione.</strong> Apri una serie e segna un episodio visto, oppure imposta il suo stato su “In corso”. Potrai aggiornare la visione da questa schermata con un tap.</div>`;
  document.querySelectorAll('[data-quick]').forEach(b=>b.onclick=()=>quickMarkNext(b.dataset.quick));appendChatToContinue();
+ renderSpotlight(ongoing);
  const names={home:'La tua collezione',all:'La mia lista',watching:'In visione',todo:'Da iniziare',done:'Completati',dub:'Doppiaggio italiano'};$('crumb').innerHTML=`LIBRARY / <strong>${safe(view==='home'?'Dashboard':names[view])}</strong>`;$('collectionTitle').innerHTML=safe(names[view])+` <span id="count"></span>`;
  const tabs=[['all','Tutti'],['todo','Da iniziare'],['watching','In corso'],['done','Completati'],['dub','Audio ITA']];$('chips').innerHTML=tabs.map(([id,label])=>`<button class="chip ${chip===id?'active':''}" data-chip="${id}">${label}</button>`).join('');document.querySelectorAll('[data-chip]').forEach(b=>b.onclick=()=>{chip=b.dataset.chip;render()});
  let list=data.filter(s=>(s.title+' '+s.genre+' '+s.desc).toLocaleLowerCase('it').includes(search));const filt=(s,v)=>v==='all'||v==='home'||(v==='dub'?progress(s).dub>0:currentState(s)===v);list=list.filter(s=>filt(s,view)&&filt(s,chip));const sort=$('sort').value;if(sort==='title')list.sort((a,b)=>a.title.localeCompare(b.title));if(sort==='recent')list.sort((a,b)=>(b.modified||0)-(a.modified||0));if(sort==='progress')list.sort((a,b)=>progress(b).p-progress(a).p);
