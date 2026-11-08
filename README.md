@@ -74,3 +74,7 @@ tests/bridge.test.mjs        Test con dati simulati
 - [crunchy-api](https://github.com/HarshitKumar9030/crunchyroll-api): client non ufficiale per watchlist, cronologia e altre funzioni.
 
 DUBTRACK è indipendente e non affiliato a Crunchyroll.
+
+## DUBTRACK v4 — Chiedi a Chat
+
+Poster anime a colori, interfaccia monocromatica e logo ad alta leggibilità. Nella scheda di ogni episodio, **Chiedi a Chat** apre `https://chatgpt.com/?q=...` con anime, stagione, episodio e richiesta di evitare spoiler. La home offre anche il link per l'ultimo episodio visto nelle serie in corso. **Copia contesto episodio** fornisce un'alternativa quando il collegamento precompilato non viene conservato. La precompilazione non è garantita da un'API ufficiale; il salvataggio dei progressi resta locale.
