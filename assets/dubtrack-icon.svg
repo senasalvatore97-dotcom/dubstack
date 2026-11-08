@@ -1,9 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="DUBTRACK, espressione anime">
-<rect width="160" height="160" rx="36" fill="#080808"/>
-<g fill="#f4f4f4">
-<path d="M18 52 70 71 65 79 15 63Z"/>
-<path d="M142 52 90 71 95 79 145 63Z"/>
-<path d="M30 79c12 3 24 5 39 5-5 16-14 21-22 21-9 0-15-7-17-26Z"/>
-<path d="M130 79c-12 3-24 5-39 5 5 16 14 21 22 21 9 0 15-7 17-26Z"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 100" role="img" aria-labelledby="title">
+<title id="title">DUBTRACK — espressione anime</title>
+<g fill="#f8f8f8">
+<path d="M11 22 80 46 75 57 9 35Z"/>
+<path d="M169 22 100 46 105 57 171 35Z"/>
+<path d="M29 59c15 8 31 9 48 4-4 21-14 30-25 30-12 0-20-11-23-34Z"/>
+<path d="M151 59c-15 8-31 9-48 4 4 21 14 30 25 30 12 0 20-11 23-34Z"/>
+</g><g fill="#080808"><ellipse cx="54" cy="77" rx="6.5" ry="10"/><ellipse cx="126" cy="77" rx="6.5" ry="10"/></g><g fill="#f8f8f8"><circle cx="51" cy="73" r="2.3"/><circle cx="129" cy="73" r="2.3"/></g></svg>
