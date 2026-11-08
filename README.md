@@ -75,6 +75,18 @@ tests/bridge.test.mjs        Test con dati simulati
 
 DUBTRACK è indipendente e non affiliato a Crunchyroll.
 
-## DUBTRACK v4 — Chiedi a Chat
 
-Poster anime a colori, interfaccia monocromatica e logo ad alta leggibilità. Nella scheda di ogni episodio, **Chiedi a Chat** apre `https://chatgpt.com/?q=...` con anime, stagione, episodio e richiesta di evitare spoiler. La home offre anche il link per l'ultimo episodio visto nelle serie in corso. **Copia contesto episodio** fornisce un'alternativa quando il collegamento precompilato non viene conservato. La precompilazione non è garantita da un'API ufficiale; il salvataggio dei progressi resta locale.
+## Chiedi a Chat (v4)
+
+Nel dettaglio di ciascun episodio il pulsante **Chiedi a Chat** apre ChatGPT tramite il collegamento `https://chatgpt.com/?q=...` con anime, stagione, episodio e richiesta di evitare spoiler già nel testo. Nella home, le serie in corso mostrano anche il link per l'ultimo episodio visto. È disponibile **Copia contesto episodio** se il browser o l'app ChatGPT non conservano il prompt precompilato.
+
+I poster sono mostrati a colori; il resto dell'interfaccia resta monocromatico. Il salvataggio rimane locale al browser. La precompilazione tramite parametro URL è una funzionalità non garantita da API pubbliche e può cambiare.
+
+
+## Catalogo anime doppiati in italiano (9 novembre 2026)
+
+Inseriti 18 nuovi titoli (15 serie + 3 film) con pagine ufficiali Crunchyroll che indicano l'audio Italiano.
+
+Per rigore, il flag `ITA verificato` è impostato soltanto sugli episodi con riscontro individuale diretto oppure su film con pagina audio specifica. Gli altri episodi non sono dichiarati doppiati in automatico: il catalogo di una serie può avere differenze tra stagioni, speciali ed episodi.
+
+I nuovi anime vengono importati **una sola volta** anche negli account con progressi in localStorage, senza sovrascrivere i dati esistenti. I film sono rappresentati come una stagione da 1 episodio; per Re:ZERO si usa la prima stagione Director's Cut (13 episodi lunghi) e la quarta stagione ha conteggio provvisorio.
