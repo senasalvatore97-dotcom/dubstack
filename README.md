@@ -2,7 +2,7 @@
 
 **Your anime. Your progress. Italian dub only.**
 
-Tracker personale con una nuova identità anime/esports e grafica mobile. Il logo è incorporato direttamente in `index.html`, quindi funziona anche come file HTML autonomo. Pubblicato tramite GitHub Pages:
+Anime tracker personale: lista, progressi e controllo puntuale del doppiaggio italiano. La nuova identità è monocromatica, minimal e leggibile su desktop e smartphone, con un simbolo anime costituito solo dall’espressione degli occhi. Pubblicato tramite GitHub Pages:
 
 **https://senasalvatore97-dotcom.github.io/dubstack/**
 
@@ -10,6 +10,8 @@ Tracker personale con una nuova identità anime/esports e grafica mobile. Il log
 
 - Libreria di anime, ricerca, filtri, copertine e stato di visione.
 - Progressi episodio per episodio, episodi acquistati, note e audio italiano **verificato manualmente**.
+- **Segna prossimo episodio visto** direttamente dalla home per tutte le serie in corso. Calcola il prossimo episodio in ordine di stagione, gestisce i salti nella sequenza e permette di **annullare** il tap per alcuni secondi.
+- Dopo la prima puntata vista, una serie entra automaticamente in «In corso», salvo che sia esplicitamente in pausa o completata.
 - Backup e ripristino JSON, esportazione CSV.
 - Importazioni manuali di Watchlist e cronologia.
 - **NUOVO, sperimentale:** importazione diretta in sola lettura da Crunchyroll tramite l'estensione personale **DUBTRACK Bridge** per Chrome/Edge desktop.
@@ -55,7 +57,9 @@ I test verificano il parsing di dati simulati e l'assenza di credenziali nel mes
 ## Struttura
 
 ```text
-index.html                   App per GitHub Pages, inclusi logo e grafica
+index.html                   App per GitHub Pages
+assets/dubtrack-logo.svg     Wordmark monocromatico DUBTRACK
+assets/dubtrack-icon.svg     Occhi anime minimali / icona app / favicon
 extension/manifest.json      Estensione Chrome/Edge MV3
 extension/background.js      API non ufficiali (solo lettura)
 extension/bridge.js          Collegamento locale alla pagina DUBTRACK
