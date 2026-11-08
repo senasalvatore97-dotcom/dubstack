@@ -1,8 +1,8 @@
-# DUBTRACK 2.1 — Anime tracker (Italian dub first)
+# DUBTRACK — Anime tracker (Italian dub first)
 
 **Your anime. Your progress. Italian dub only.**
 
-Tracker personale con design scuro/arancione e versione mobile. Pubblicato tramite GitHub Pages:
+Tracker personale con una nuova identità anime/esports e grafica mobile. Il logo è incorporato direttamente in `index.html`, quindi funziona anche come file HTML autonomo. Pubblicato tramite GitHub Pages:
 
 **https://senasalvatore97-dotcom.github.io/dubstack/**
 
@@ -55,7 +55,7 @@ I test verificano il parsing di dati simulati e l'assenza di credenziali nel mes
 ## Struttura
 
 ```text
-index.html                   App per GitHub Pages
+index.html                   App per GitHub Pages, inclusi logo e grafica
 extension/manifest.json      Estensione Chrome/Edge MV3
 extension/background.js      API non ufficiali (solo lettura)
 extension/bridge.js          Collegamento locale alla pagina DUBTRACK
