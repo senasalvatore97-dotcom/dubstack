@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#080808">
 <meta name="description" content="DUBTRACK: il tuo anime tracker italiano. Serie, progressi e stato del doppiaggio in un unico posto.">
 <title>DUBTRACK — Anime only, dubbed.</title>
-<link rel="icon" href="assets/dubtrack-icon.svg?v=4" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/dubtrack-icon.svg?v=4">
+<link rel="icon" href="assets/dubtrack-face.svg?v=5" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -292,30 +292,56 @@ input[type=checkbox] {accent-color:#eaeaea}
 @media(max-width:370px) {.grid{gap:10px 8px}.heroText h1{font-size:31px}.continuePic{width:85px;flex-basis:85px}.continueMeta .name{font-size:15px}.detailGrid{grid-template-columns:1fr}.detailPoster{display:none}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-/* DUBTRACK V4 — more legible mono logo, colored posters, episode chat */
-.logo{gap:10px;padding:6px 3px 17px;min-width:0;align-items:center}
-.brandLogoImg{width:68px;height:48px;display:block;object-fit:contain;flex:0 0 68px;filter:none;border-radius:0}
-.logoStack{min-width:0;flex:1}.logoType{font:900 22px/1 'Outfit',Arial,sans-serif;letter-spacing:-.9px;white-space:nowrap}.logoSub{font-size:8px;letter-spacing:1.1px;white-space:nowrap;color:#919191;margin-top:7px}
-.hero{grid-template-columns:minmax(0,1.25fr) minmax(230px,.75fr);isolation:isolate}
-.heroText{min-width:0}.heroVisual{min-width:0;display:flex;align-items:center;justify-content:center;padding:22px 34px}.heroVisual:before{display:none}
-.heroVisualPanel{width:100%;max-width:380px;aspect-ratio:180/100;height:auto;min-height:170px;background:none;border:0;border-radius:0;box-shadow:none;display:flex;justify-content:center;align-items:center;transform:none;overflow:visible}
-.heroVisualPanel:before,.heroVisualPanel:after{display:none}
-.heroMascot{display:block;width:100%;max-width:370px;height:auto;max-height:none;object-fit:contain;opacity:1;filter:drop-shadow(0 18px 38px #ffffff0a)}
-.cover,.cover img,.continuePic img,.detailPoster img{filter:none!important}.cover{background:linear-gradient(145deg,#363636,#0e0e0e)}
-.continueCard{overflow:hidden}.continuePic{isolation:isolate}
-.continueChat{display:flex;align-items:center;justify-content:center;min-height:32px;border:1px solid #474747;border-radius:9px;background:#222;color:#eee;text-decoration:none;font-weight:750;font-size:11px;text-align:center;padding:7px 9px;transition:background .18s,border-color .18s}
-.continueChat:hover{background:#303030;border-color:#777}
-.askChatPanel{border:1px solid #3b3b3b;border-radius:13px;padding:12px;margin:12px 0;background:#242424;display:grid;gap:9px}
-.askChatHead{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.askChatTitle{font:850 12px 'Outfit',sans-serif;color:#f4f4f4}
-.askChatEpisode{font-size:10px;color:#b8b8b8}
-.askChatBtn{width:100%;min-height:42px;background:#efefef!important;color:#101010!important;border-color:#efefef!important;font-weight:850;text-transform:none}
-.askChatBtn:hover{background:#fff!important}
-.askChatCopy{width:100%;background:transparent;border:1px solid #484848;color:#c6c6c6;border-radius:9px;padding:9px;font-size:11px;font-weight:750}
-.askChatCopy:hover{border-color:#999;color:#fff}.askChatHint{font-size:10px;line-height:1.45;color:#969696;margin:0}
-@media (max-width:960px) and (min-width:701px){.logo{justify-content:center;padding:4px 0 0}.brandLogoImg{width:55px;height:47px;flex-basis:55px}}
-@media (max-width:700px){.hero{grid-template-columns:1fr}.heroVisual{order:1;height:108px;padding:17px 16px 0;overflow:visible}.heroVisualPanel{max-width:200px;min-height:0;width:200px;height:96px;aspect-ratio:auto;transform:none}.heroMascot{max-height:98px;width:100%}.heroText{order:2;padding-top:14px}.continueChat{min-height:35px}}
-@media (max-width:370px){.heroVisual{height:91px;padding-top:12px}.heroVisualPanel{width:170px;height:80px}.heroMascot{max-height:80px}}
+/* DUBTRACK V4: logo clarity, responsive polish, full-colour anime artwork */
+.logo {gap:10px;padding:6px 3px 17px;min-width:0;align-items:center}
+.brandLogoImg {width:68px;height:48px;display:block;object-fit:contain;object-position:center;flex:0 0 68px;filter:none;border-radius:0}
+.logoStack {min-width:0;flex:1}
+.logoType {font:900 22px/1 'Outfit',Arial,sans-serif;letter-spacing:-.9px;white-space:nowrap}
+.logoSub {font-size:8px;letter-spacing:1.1px;white-space:nowrap;color:#919191;margin-top:7px}
+.hero {grid-template-columns:minmax(0,1.25fr) minmax(230px,.75fr);isolation:isolate}
+.heroText {min-width:0}
+.heroVisual {min-width:0;display:flex;align-items:center;justify-content:center;padding:22px 34px}
+.heroVisual:before {display:none}
+.heroVisualPanel {width:100%;max-width:380px;aspect-ratio:180 / 100;height:auto;min-height:170px;background:none;border:0;border-radius:0;box-shadow:none;display:flex;justify-content:center;align-items:center;transform:none;overflow:visible}
+.heroVisualPanel:before,.heroVisualPanel:after {display:none}
+.heroMascot {display:block;width:100%;max-width:370px;height:auto;max-height:none;object-fit:contain;opacity:1;filter:drop-shadow(0 18px 38px #ffffff0a)}
+.cover,.cover img,.continuePic img,.detailPoster img {filter:none!important}
+.cover {background:linear-gradient(145deg,#363636,#0e0e0e)}
+.continueCard {overflow:hidden}
+.continuePic {isolation:isolate}
+.continueChat {display:flex;align-items:center;justify-content:center;gap:7px;min-height:32px;border:1px solid #474747;border-radius:9px;background:#222;color:#eee;text-decoration:none;font-weight:750;font-size:11px;text-align:center;padding:7px 9px;transition:background .18s,border-color .18s}
+.continueChat:hover {background:#303030;border-color:#777}
+.continueChat small {font-size:10px;color:#aaa;font-weight:650}
+.continueOpen {min-height:24px}
+.askChatPanel {border:1px solid #3b3b3b;border-radius:13px;padding:12px;margin-top:14px;background:#242424;display:grid;gap:9px}
+.askChatHead {display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.askChatTitle {font:850 12px 'Outfit',sans-serif;color:#f4f4f4}
+.askChatEpisode {font-size:10px;color:#b8b8b8}
+.askChatBtn {width:100%;min-height:42px;background:#efefef!important;color:#101010!important;border-color:#efefef!important;font-weight:850;text-transform:none}
+.askChatBtn:hover {background:#fff!important}
+.askChatCopy {width:100%;background:transparent;border:1px solid #484848;color:#c6c6c6;border-radius:9px;padding:9px;font-size:11px;font-weight:750}
+.askChatCopy:hover {border-color:#999;color:#fff}
+.askChatHint {font-size:10px;line-height:1.45;color:#969696;margin:0}
+@media (max-width:960px) and (min-width:701px) {
+ .logo {justify-content:center;padding:4px 0 0}
+ .brandLogoImg {width:55px;height:47px;flex-basis:55px}
+}
+@media (max-width:700px) {
+ .hero {grid-template-columns:1fr}
+ .heroVisual {order:1;height:108px;padding:17px 16px 0;overflow:visible}
+ .heroVisualPanel {max-width:200px;min-height:0;width:200px;height:96px;aspect-ratio:auto;transform:none}
+ .heroMascot {max-height:98px;width:100%}
+ .heroText {order:2;padding-top:14px}
+ .continueChat {min-height:35px}
+ .askChatPanel {margin-top:12px}
+}
+@media (max-width:370px) {
+ .heroVisual {height:91px;padding-top:12px}
+ .heroVisualPanel {width:170px;height:80px}
+ .heroMascot {max-height:80px}
+}
+
+
 /* Featured episode — one swipeable card; the rest of the dashboard is unchanged. */
 #spotlightSection{margin:34px 0 8px}
 #spotlightSection.hide{display:none!important}
@@ -369,12 +395,45 @@ input[type=checkbox] {accent-color:#eaeaea}
 @media(max-width:700px){#spotlightSection{margin-top:25px}#spotlightSection .sectionBar{align-items:flex-start;gap:10px;flex-wrap:wrap}.spotlightPicker{width:100%;justify-content:space-between}.spotlightPicker select{flex:1;max-width:230px}.spotlightShell{grid-template-columns:1fr;gap:18px;min-height:0;padding:23px 17px 25px;border-radius:22px}.spotlightIntro{text-align:left}.spotlightName{font-size:32px}.spotlightEpisode{margin-bottom:14px}.spotlightDescription{margin-bottom:15px}.spotlightMeter{margin-bottom:18px}.spotlightStack{padding-top:6px}.spotlightCardZone,.spotlightButtons{width:min(100%,300px)}.spotlightCard{aspect-ratio:4/4.35}.spotlightButtons{margin-top:14px}.spotlightNote{margin-top:9px}.spotlightInstruction{gap:7px 15px}}
 @media(prefers-reduced-motion:reduce){.spotlightCard,.spotlightButton,.spotlightMeter span{transition:none!important}}
 
+
+/* V5 BRAND — final monochrome filled-face mascot and original wordmark. No dashboard logic modified. */
+.logo {gap:8px;padding:6px 2px 18px;align-items:center;min-width:0}
+.brandLogoImg {width:52px;height:52px;flex:0 0 52px;display:block;object-fit:contain;filter:none;border-radius:0}
+.logoStack {flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0;gap:4px}
+.logoWordmark {display:block;width:100%;max-width:147px;height:auto;aspect-ratio:1005 / 130;object-fit:contain;object-position:left center}
+.logoSub {margin-top:1px;color:#8f8f8f;font-size:7.5px;letter-spacing:1.2px;font-weight:750;white-space:nowrap}
+.heroVisual {display:flex;align-items:center;justify-content:center;padding:18px 18px 20px;min-width:0}
+.heroVisualPanel {width:100%;max-width:350px;min-height:0;height:auto;aspect-ratio:auto;border:0;background:none;box-shadow:none;overflow:visible}
+.brandHeroLockup {display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;width:100%}
+.heroFace {width:min(67%,235px);height:auto;display:block;filter:drop-shadow(0 16px 26px rgba(0,0,0,.22))}
+.heroWordmark {width:min(96%,295px);height:auto;display:block}
+.brandAvatar {padding:7px;background:#121212;border:1px solid #393939;box-shadow:none;display:flex;align-items:center;justify-content:center}
+.brandAvatar img {display:block;width:100%;height:100%;object-fit:contain}
+@media (max-width:960px) and (min-width:701px) {
+ .logo {justify-content:center;padding:7px 0 0}
+ .brandLogoImg {width:50px;height:50px;flex-basis:50px}
+ .logoStack {display:none}
+}
+@media (max-width:700px) {
+ .heroVisual {order:1;height:auto;min-height:148px;padding:17px 14px 2px;overflow:visible}
+ .heroVisualPanel {width:100%;max-width:250px;min-height:0;height:auto;aspect-ratio:auto}
+ .brandHeroLockup {gap:8px}
+ .heroFace {width:95px}
+ .heroWordmark {width:193px}
+ .heroText {order:2;padding-top:13px}
+}
+@media (max-width:370px) {
+ .heroVisual {min-height:125px;padding-top:14px}
+ .heroFace {width:78px}
+ .heroWordmark {width:171px}
+}
+
 </style>
 </head>
 <body>
 <div class="shell">
  <aside class="sidebar">
-   <div class="logo"><img class="brandLogoImg" src="assets/dubtrack-icon.svg?v=4" alt="Logo DUBTRACK: occhi anime minimal"><div class="logoStack"><div class="logoType">DUBTRACK</div><div class="logoSub">ITALIAN DUB TRACKER</div></div></div>
+   <div class="logo" aria-label="DUBTRACK"><img class="brandLogoImg" src="assets/dubtrack-face.svg?v=5" alt="" aria-hidden="true"><div class="logoStack"><img class="logoWordmark" src="assets/dubtrack-wordmark.svg?v=5" alt="DUBTRACK"><div class="logoSub">ITALIAN DUB TRACKER</div></div></div>
    <div class="sideLabel">LIBRARY</div>
    <nav class="nav" id="desktopNav"></nav>
    <div class="sideFooter"><div class="sideBox"><div class="mini">YOUR ANIME / YOUR RULES</div><p>La tua cronologia, il doppiaggio italiano e la watchlist. Tutto qui.</p><button id="sideSync">Crunchyroll & importazione</button></div><div class="sideFootnote">DUBTRACK / FAN EDITION</div></div>
@@ -382,12 +441,12 @@ input[type=checkbox] {accent-color:#eaeaea}
  <main class="main">
   <header class="topbar">
    <label class="searchbox" aria-label="Cerca nella libreria"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="globalSearch" type="search" placeholder="Cerca il tuo prossimo anime..." autocomplete="off"></label>
-   <div class="topActions"><button class="syncChip" id="syncBtn" title="Gestione Crunchyroll"><span class="orangeDot"></span><span>Crunchyroll · Non collegato</span><svg class="icon" style="width:13px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button><div class="avatar" aria-label="Profilo locale">DT</div></div>
+   <div class="topActions"><button class="syncChip" id="syncBtn" title="Gestione Crunchyroll"><span class="orangeDot"></span><span>Crunchyroll · Non collegato</span><svg class="icon" style="width:13px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button><div class="avatar brandAvatar" aria-label="Profilo locale"><img src="assets/dubtrack-face.svg?v=5" alt=""></div></div>
   </header>
   <div class="page">
    <div class="pageLabel"><span id="crumb">HOME / <strong>Dashboard</strong></span><span id="localStatus">● Salvato su questo dispositivo</span></div>
    <section id="homeSections">
-     <section class="hero"><div class="heroBG" id="heroBG"></div><div class="heroText"><div class="eyebrow">YOUR ANIME. YOUR PROGRESS.</div><h1>I tuoi anime.<br><em>Tutto sotto controllo.</em></h1><p>Una sola lista per le serie che segui, gli episodi visti e quelli ancora da guardare. Con il doppiaggio italiano sempre in evidenza.</p><div class="heroBtns"><button class="btn primary" id="heroExplore">Esplora la libreria ↗</button><button class="btn ghost" id="heroSync">Crunchyroll &amp; importazione</button></div></div><div class="heroVisual"><div class="heroVisualPanel"><img class="heroMascot" src="assets/dubtrack-icon.svg?v=4" alt="Espressione anime minimalista"></div></div></section>
+     <section class="hero"><div class="heroBG" id="heroBG"></div><div class="heroText"><div class="eyebrow">YOUR ANIME. YOUR PROGRESS.</div><h1>I tuoi anime.<br><em>Tutto sotto controllo.</em></h1><p>Una sola lista per le serie che segui, gli episodi visti e quelli ancora da guardare. Con il doppiaggio italiano sempre in evidenza.</p><div class="heroBtns"><button class="btn primary" id="heroExplore">Esplora la libreria ↗</button><button class="btn ghost" id="heroSync">Crunchyroll &amp; importazione</button></div></div><div class="heroVisual"><div class="heroVisualPanel"><div class="brandHeroLockup" aria-label="DUBTRACK"><img class="heroFace" src="assets/dubtrack-face.svg?v=5" alt="Faccina DUBTRACK"><img class="heroWordmark" src="assets/dubtrack-wordmark.svg?v=5" alt="DUBTRACK"></div></div></div></section>
    </section>
    <section id="stats" class="stats"></section>
    <section id="spotlightSection" class="hide" aria-label="Episodio in evidenza">
@@ -448,36 +507,24 @@ function currentState(s){const p=progress(s);if(p.seen===p.total&&p.total)return
 function stateName(v){return {todo:'Da iniziare',watching:'In corso',done:'Completato',paused:'In pausa'}[v]||'Da iniziare'}
 function infoTag(s){const n=progress(s).dub;return n?`ITA · ${n} EP. VERIFICAT${n===1?'O':'I'}`:'ITA DA VERIFICARE'}
 
-
-function chatEpisodePrompt(s,season,episode){
- return 'Sto guardando l\'anime "'+s.title+'". Sono alla stagione '+(season+1)+', episodio '+episode+' (S'+(season+1)+'E'+episode+'). Vorrei chiederti qualcosa su questa puntata. Rispondimi in italiano ed evita qualsiasi spoiler sugli episodi successivi. La mia domanda è: ';
+function chatEpisodePrompt(s,seasonIndex,episodeNumber){
+  return `Sto guardando l'anime "${s.title}". Sono alla stagione ${seasonIndex+1}, episodio ${episodeNumber} (S${seasonIndex+1}E${episodeNumber}). Vorrei chiederti qualcosa su questa puntata. Rispondimi in italiano ed evita qualsiasi spoiler sugli episodi successivi. La mia domanda è: `;
 }
-function chatEpisodeUrl(s,season,episode){return 'https://chatgpt.com/?q='+encodeURIComponent(chatEpisodePrompt(s,season,episode))}
-function lastWatchedEpisode(s){let result=null;s.seasons.forEach((z,season)=>{for(let episode=1;episode<=z.total;episode++)if(z.eps?.[episode]?.watched)result={season,episode}});return result}
-async function copyChatEpisodeContext(s,season,episode){const prompt=chatEpisodePrompt(s,season,episode);try{await navigator.clipboard.writeText(prompt);toast('Contesto copiato. Incollalo in ChatGPT.')}catch(_){window.prompt('Copia il testo per ChatGPT:',prompt)}}
-function appendChatToContinue(){
- document.querySelectorAll('.continueCard').forEach(card=>{
-  const id=card.querySelector('[data-open]')?.dataset.open;
-  const s=data.find(x=>x.id===id);if(!s)return;
-  const last=lastWatchedEpisode(s);if(!last)return;
-  const a=document.createElement('a');a.className='continueChat';a.href=chatEpisodeUrl(s,last.season,last.episode);a.target='_blank';a.rel='noopener noreferrer';
-  a.textContent='Chiedi a Chat · S'+(last.season+1)+' Ep '+last.episode+' ↗';
-  const parent=card.querySelector('.continueMeta'),anchor=card.querySelector('.continueOpen');if(parent&&anchor)parent.insertBefore(a,anchor);
- })
+function chatEpisodeUrl(s,seasonIndex,episodeNumber){
+  return 'https://chatgpt.com/?q='+encodeURIComponent(chatEpisodePrompt(s,seasonIndex,episodeNumber));
 }
-function addChatToInspector(s,season,episode){
- const inspector=document.querySelector('.inspector');if(!inspector)return;
- const panel=document.createElement('div');panel.className='askChatPanel';
- const row=document.createElement('div');row.className='askChatHead';
- const title=document.createElement('span');title.className='askChatTitle';title.textContent='Hai domande su questo episodio?';
- const number=document.createElement('span');number.className='askChatEpisode';number.textContent='S'+(season+1)+' · Ep '+episode;
- row.append(title,number);panel.appendChild(row);
- const link=document.createElement('a');link.id='askChatEpisode';link.className='btn askChatBtn';link.href=chatEpisodeUrl(s,season,episode);link.target='_blank';link.rel='noopener noreferrer';link.textContent='Chiedi a Chat ↗';panel.appendChild(link);
- const copy=document.createElement('button');copy.type='button';copy.id='copyChatContext';copy.className='askChatCopy';copy.textContent='Copia contesto episodio';copy.onclick=()=>copyChatEpisodeContext(s,season,episode);panel.appendChild(copy);
- const hint=document.createElement('p');hint.className='askChatHint';hint.textContent='Apre ChatGPT con anime ed episodio già indicati. Scrivi la tua domanda, senza spoiler successivi.';panel.appendChild(hint);
- const sub=inspector.querySelector('p');if(sub)sub.insertAdjacentElement('afterend',panel);else inspector.prepend(panel);
+function lastWatchedEpisode(s){
+  let result=null;
+  s.seasons.forEach((z,season)=>{
+    for(let episode=1;episode<=z.total;episode++)if(z.eps?.[episode]?.watched)result={season,episode};
+  });
+  return result;
 }
-
+async function copyChatEpisodeContext(s,seasonIndex,episodeNumber){
+  const prompt=chatEpisodePrompt(s,seasonIndex,episodeNumber);
+  try { await navigator.clipboard.writeText(prompt);toast('Contesto copiato. Incollalo in ChatGPT.'); }
+  catch (_) { window.prompt('Copia questo testo per ChatGPT:',prompt); }
+}
 function nextUnwatched(s){
   const order=[];let lastSeen=-1;
   for(let season=0;season<s.seasons.length;season++){
@@ -527,6 +574,7 @@ function mark(s){s.modified=Date.now();save();render()}
 function navButton(v,label,icon){const count=v==='watching'?data.filter(s=>currentState(s)==='watching').length:v==='todo'?data.filter(s=>currentState(s)==='todo').length:v==='done'?data.filter(s=>currentState(s)==='done').length:null;return `<button class="navItem ${view===v?'active':''}" data-view="${v}">${I(icon)}<span>${label}</span>${count!==null?`<small class="navCount">${count}</small>`:''}</button>`}
 function renderNav(){const list=[['home','Dashboard','home'],['all','La mia lista','grid'],['watching','In visione','play'],['todo','Da iniziare','bookmark'],['done','Completati','check'],['dub','Audio italiano','headphones']];$('desktopNav').innerHTML=list.map(x=>navButton(...x)).join('');$('mobileNav').innerHTML=[list[0],list[1],list[2],list[4],list[5]].map(x=>navButton(...x)).join('');document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setView(b.dataset.view));}
 function setView(v){view=v;chip='all';render();window.scrollTo({top:0,behavior:'smooth'})}
+
 // A single spotlight card is enabled on the home dashboard; all other series keep their existing controls.
 const SPOTLIGHT_KEY='dubtrack_spotlight_id_v1';
 let spotlightId=(()=>{try{return localStorage.getItem(SPOTLIGHT_KEY)||''}catch(_){return ''}})();
@@ -615,10 +663,10 @@ function renderSpotlight(ongoing){
 function render(){renderNav();const p=data.map(progress),totalWatched=p.reduce((n,v)=>n+v.seen,0),totalBought=p.reduce((n,v)=>n+v.bought,0),inprogress=data.filter(s=>currentState(s)==='watching').length;const stats=[{n:data.length,t:'Serie in collezione',icon:'grid'},{n:totalWatched,t:'Episodi guardati',icon:'play'},{n:inprogress,t:'Serie in corso',icon:'layers'},{n:totalBought,t:'Episodi acquistati',icon:'bookmark'}];$('stats').innerHTML=stats.map(s=>`<div class="stat"><div class="big">${s.n}</div><div class="title">${s.t}</div>${I(s.icon)}</div>`).join('');$('homeSections').classList.toggle('hide',view!=='home');$('continueSection').classList.toggle('hide',view!=='home');$('heroBG').style.backgroundImage=`url("${COVERS.gachiakuta}")`;
  const ongoing=data.filter(s=>currentState(s)==='watching').sort((a,b)=>(b.modified||0)-(a.modified||0));
  $('continueRow').innerHTML=ongoing.length?ongoing.slice(0,6).map(s=>{
-   const p=progress(s),next=nextUnwatched(s),label=next?`${next.catchup?'Recupera':'Segna visto'} · S${next.season+1} Ep ${next.episode}`:'Apri scheda';
-   return `<article class="continueCard" aria-label="${safe(s.title)}"><div class="continuePic">${coverImg(s)}</div><div class="continueMeta"><div class="name">${safe(s.title)}</div><span class="next">${p.seen} di ${p.total} episodi visti</span><div class="bar"><span style="width:${p.p}%"></span></div><span class="percentage">${p.p}% completato</span>${next?`<button type="button" class="quickMark" data-quick="${safe(s.id)}" aria-label="${safe(label)} di ${safe(s.title)}">${safe(label)} <span aria-hidden="true">✓</span></button>`:''}<button type="button" class="continueOpen" data-open="${safe(s.id)}">Apri la scheda ↗</button></div></article>`;
+   const p=progress(s),next=nextUnwatched(s),lastSeen=lastWatchedEpisode(s),label=next?`${next.catchup?'Recupera':'Segna visto'} · S${next.season+1} Ep ${next.episode}`:'Apri scheda';
+   return `<article class="continueCard" aria-label="${safe(s.title)}"><div class="continuePic">${coverImg(s)}</div><div class="continueMeta"><div class="name">${safe(s.title)}</div><span class="next">${p.seen} di ${p.total} episodi visti</span><div class="bar"><span style="width:${p.p}%"></span></div><span class="percentage">${p.p}% completato</span>${next?`<button type="button" class="quickMark" data-quick="${safe(s.id)}" aria-label="${safe(label)} di ${safe(s.title)}">${safe(label)} <span aria-hidden="true">✓</span></button>`:''}${lastSeen?`<a class="continueChat" href="${safe(chatEpisodeUrl(s,lastSeen.season,lastSeen.episode))}" target="_blank" rel="noopener noreferrer" aria-label="Chiedi a Chat informazioni su ${safe(s.title)}, stagione ${lastSeen.season+1}, episodio ${lastSeen.episode}">Chiedi a Chat <small>· S${lastSeen.season+1} E${lastSeen.episode}</small> ↗</a>`:''}<button type="button" class="continueOpen" data-open="${safe(s.id)}">Apri la scheda ↗</button></div></article>`;
  }).join(''):`<div class="hint" style="grid-column:1/-1"><strong>Qui vedrai gli anime in visione.</strong> Apri una serie e segna un episodio visto, oppure imposta il suo stato su “In corso”. Potrai aggiornare la visione da questa schermata con un tap.</div>`;
- document.querySelectorAll('[data-quick]').forEach(b=>b.onclick=()=>quickMarkNext(b.dataset.quick));appendChatToContinue();
+ document.querySelectorAll('[data-quick]').forEach(b=>b.onclick=()=>quickMarkNext(b.dataset.quick));
  renderSpotlight(ongoing);
  const names={home:'La tua collezione',all:'La mia lista',watching:'In visione',todo:'Da iniziare',done:'Completati',dub:'Doppiaggio italiano'};$('crumb').innerHTML=`LIBRARY / <strong>${safe(view==='home'?'Dashboard':names[view])}</strong>`;$('collectionTitle').innerHTML=safe(names[view])+` <span id="count"></span>`;
  const tabs=[['all','Tutti'],['todo','Da iniziare'],['watching','In corso'],['done','Completati'],['dub','Audio ITA']];$('chips').innerHTML=tabs.map(([id,label])=>`<button class="chip ${chip===id?'active':''}" data-chip="${id}">${label}</button>`).join('');document.querySelectorAll('[data-chip]').forEach(b=>b.onclick=()=>{chip=b.dataset.chip;render()});
@@ -631,8 +679,8 @@ function selected(){return data.find(s=>s.id===active)}
 function openAnime(id){active=id;seasonIdx=0;epNum=1;drawDetail()}
 function drawDetail(){const s=selected();if(!s)return close();seasonIdx=Math.max(0,Math.min(seasonIdx,s.seasons.length-1));let z=s.seasons[seasonIdx];epNum=Math.max(1,Math.min(epNum,z.total));const ep=z.eps[epNum]||{},p=progress(s),numSeasons=s.seasons.length;
  const poster=coverImg(s);const eps=Array.from({length:z.total},(_,i)=>{const n=i+1,e=z.eps[n]||{};return `<button class="epTile ${e.watched?'seen':''} ${n===epNum?'active':''}" data-ep="${n}" title="Episodio ${n} | ${e.watched?'Visto':'Da vedere'}${e.dub==='yes'?' | Audio ITA confermato':''}">${n}${e.bought?'<span class="buyDot"></span>':''}${e.dub==='yes'?'<span class="dubDot">IT</span>':''}</button>`}).join('');
- const contents=`${head(s.title,`${safe(s.genre)} · ${p.seen}/${p.total} episodi visti`)}<div class="modalBody"><div class="detailGrid"><div class="detailPoster">${poster}<span class="tag">${p.dub?'AUDIO ITA · VERIFICHE PARZIALI':'AUDIO ITA DA VERIFICARE'}</span></div><div class="detailOverview"><div class="eyebrow">ANIME / DETAIL</div><p>${safe(s.desc||'Nessuna descrizione inserita.')}</p><div class="detailMeta"><span>${numSeasons} stagion${numSeasons===1?'e':'i'}</span><span>${p.total} episodi</span><span>${p.p}% completato</span></div><label class="field">STATO DELLA SERIE<select id="animeStatus"><option value="todo">Da iniziare</option><option value="watching">In corso</option><option value="done">Completato</option><option value="paused">In pausa</option></select></label><div class="detailControls"><a class="btn small primary" href="${safe(validUrl(s.link)||'https://www.crunchyroll.com/it/')}" target="_blank" rel="noopener noreferrer">▶ Guarda su Crunchyroll ↗</a><button id="editAnime" class="btn small">Modifica scheda</button></div></div></div><div class="dubCallout"><h4>${I('headphones',16)} Audio italiano: verifica puntuale</h4><p>${safe(s.note||'Il doppiaggio italiano di questa serie non è ancora verificato.')}${s.source?` <a href="${safe(validUrl(s.source))}" target="_blank" rel="noopener noreferrer">Apri la fonte ↗</a>`:''}<br>Un singolo episodio con audio ITA non conferma il resto della stagione. I nuovi doppiaggi non vengono controllati automaticamente.</p></div><div class="modeBar">${s.seasons.map((z,i)=>`<button class="modeTab ${i===seasonIdx?'active':''}" data-season="${i}">${safe(z.name)} <span style="opacity:.6">(${z.total})</span></button>`).join('')}<button class="modeTab" id="addSeason">+ Stagione</button></div><div class="seasonActions"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><label class="field inline">EPISODI <input type="number" id="epTotal" min="1" max="999" value="${z.total}"></label><button class="btn small" id="setTotal">Aggiorna</button><button class="btn small" id="deleteSeason">Elimina stagione</button></div><div style="display:flex;gap:7px;flex-wrap:wrap"><input type="number" id="bulkTo" min="1" max="${z.total}" value="${z.total}" style="width:67px;padding:9px"><button class="btn small" id="bulkSeen">Segna visti fino a...</button></div></div><div class="detailLegend"><span><i class="legendDot"></i>Visto</span><span><i class="legendDot purchased"></i>Acquistato</span><span><i class="legendDot dubbed"></i>ITA verificato</span></div><div class="epsGrid"><div class="episodeTiles">${eps}</div><div class="inspector"><h4>Episodio ${epNum}</h4><p>Le modifiche si salvano sul dispositivo.</p><label class="switchCheck"><input id="watched" type="checkbox" ${ep.watched?'checked':''}> Episodio visto</label><label class="switchCheck"><input id="bought" type="checkbox" ${ep.bought?'checked':''}> Episodio acquistato</label><label class="field">AUDIO ITALIANO<select id="epDub"><option value="unknown">Da verificare</option><option value="yes">Confermato in italiano</option><option value="no">Italiano non disponibile</option></select></label><label class="field">NOTE<textarea id="epNote" rows="3" placeholder="Appunti sulla puntata...">${safe(ep.note||'')}</textarea></label></div></div></div>`;
- show(contents,true);addChatToInspector(s,seasonIdx,epNum);$('animeStatus').value=s.status;$('animeStatus').onchange=e=>{s.status=e.target.value;mark(s);drawDetail()};$('editAnime').onclick=()=>drawEditor(s);$('epDub').value=ep.dub||'unknown';document.querySelectorAll('[data-season]').forEach(b=>b.onclick=()=>{seasonIdx=Number(b.dataset.season);epNum=1;drawDetail()});document.querySelectorAll('[data-ep]').forEach(b=>b.onclick=()=>{epNum=Number(b.dataset.ep);drawDetail()});function epUpdate(k,value){z.eps[epNum]??={};z.eps[epNum][k]=value;if(k==='watched'&&value&&s.status==='todo')s.status='watching';mark(s);drawDetail()}$('watched').onchange=e=>epUpdate('watched',e.target.checked);$('bought').onchange=e=>epUpdate('bought',e.target.checked);$('epDub').onchange=e=>epUpdate('dub',e.target.value);$('epNote').onchange=e=>epUpdate('note',e.target.value);
+ const contents=`${head(s.title,`${safe(s.genre)} · ${p.seen}/${p.total} episodi visti`)}<div class="modalBody"><div class="detailGrid"><div class="detailPoster">${poster}<span class="tag">${p.dub?'AUDIO ITA · VERIFICHE PARZIALI':'AUDIO ITA DA VERIFICARE'}</span></div><div class="detailOverview"><div class="eyebrow">ANIME / DETAIL</div><p>${safe(s.desc||'Nessuna descrizione inserita.')}</p><div class="detailMeta"><span>${numSeasons} stagion${numSeasons===1?'e':'i'}</span><span>${p.total} episodi</span><span>${p.p}% completato</span></div><label class="field">STATO DELLA SERIE<select id="animeStatus"><option value="todo">Da iniziare</option><option value="watching">In corso</option><option value="done">Completato</option><option value="paused">In pausa</option></select></label><div class="detailControls"><a class="btn small primary" href="${safe(validUrl(s.link)||'https://www.crunchyroll.com/it/')}" target="_blank" rel="noopener noreferrer">▶ Guarda su Crunchyroll ↗</a><button id="editAnime" class="btn small">Modifica scheda</button></div></div></div><div class="dubCallout"><h4>${I('headphones',16)} Audio italiano: verifica puntuale</h4><p>${safe(s.note||'Il doppiaggio italiano di questa serie non è ancora verificato.')}${s.source?` <a href="${safe(validUrl(s.source))}" target="_blank" rel="noopener noreferrer">Apri la fonte ↗</a>`:''}<br>Un singolo episodio con audio ITA non conferma il resto della stagione. I nuovi doppiaggi non vengono controllati automaticamente.</p></div><div class="modeBar">${s.seasons.map((z,i)=>`<button class="modeTab ${i===seasonIdx?'active':''}" data-season="${i}">${safe(z.name)} <span style="opacity:.6">(${z.total})</span></button>`).join('')}<button class="modeTab" id="addSeason">+ Stagione</button></div><div class="seasonActions"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><label class="field inline">EPISODI <input type="number" id="epTotal" min="1" max="999" value="${z.total}"></label><button class="btn small" id="setTotal">Aggiorna</button><button class="btn small" id="deleteSeason">Elimina stagione</button></div><div style="display:flex;gap:7px;flex-wrap:wrap"><input type="number" id="bulkTo" min="1" max="${z.total}" value="${z.total}" style="width:67px;padding:9px"><button class="btn small" id="bulkSeen">Segna visti fino a...</button></div></div><div class="detailLegend"><span><i class="legendDot"></i>Visto</span><span><i class="legendDot purchased"></i>Acquistato</span><span><i class="legendDot dubbed"></i>ITA verificato</span></div><div class="epsGrid"><div class="episodeTiles">${eps}</div><div class="inspector"><h4>Episodio ${epNum}</h4><p>Le modifiche si salvano sul dispositivo.</p><div class="askChatPanel"><div class="askChatHead"><span class="askChatTitle">Hai domande su questo episodio?</span><span class="askChatEpisode">S${seasonIdx+1} · Ep ${epNum}</span></div><a id="askChatEpisode" class="btn askChatBtn" href="${safe(chatEpisodeUrl(s,seasonIdx,epNum))}" target="_blank" rel="noopener noreferrer">Chiedi a Chat ↗</a><button type="button" id="copyChatContext" class="askChatCopy">Copia contesto episodio</button><p class="askChatHint">Apre ChatGPT con anime ed episodio già indicati. Puoi scrivere la tua domanda, senza spoiler successivi.</p></div><label class="switchCheck"><input id="watched" type="checkbox" ${ep.watched?'checked':''}> Episodio visto</label><label class="switchCheck"><input id="bought" type="checkbox" ${ep.bought?'checked':''}> Episodio acquistato</label><label class="field">AUDIO ITALIANO<select id="epDub"><option value="unknown">Da verificare</option><option value="yes">Confermato in italiano</option><option value="no">Italiano non disponibile</option></select></label><label class="field">NOTE<textarea id="epNote" rows="3" placeholder="Appunti sulla puntata...">${safe(ep.note||'')}</textarea></label></div></div></div>`;
+ show(contents,true);$('animeStatus').value=s.status;$('animeStatus').onchange=e=>{s.status=e.target.value;mark(s);drawDetail()};$('editAnime').onclick=()=>drawEditor(s);$('epDub').value=ep.dub||'unknown';document.querySelectorAll('[data-season]').forEach(b=>b.onclick=()=>{seasonIdx=Number(b.dataset.season);epNum=1;drawDetail()});document.querySelectorAll('[data-ep]').forEach(b=>b.onclick=()=>{epNum=Number(b.dataset.ep);drawDetail()});function epUpdate(k,value){z.eps[epNum]??={};z.eps[epNum][k]=value;if(k==='watched'&&value&&s.status==='todo')s.status='watching';mark(s);drawDetail()}$('copyChatContext').onclick=()=>copyChatEpisodeContext(s,seasonIdx,epNum);$('watched').onchange=e=>epUpdate('watched',e.target.checked);$('bought').onchange=e=>epUpdate('bought',e.target.checked);$('epDub').onchange=e=>epUpdate('dub',e.target.value);$('epNote').onchange=e=>epUpdate('note',e.target.value);
  $('setTotal').onclick=()=>{const v=Number($('epTotal').value);if(!Number.isInteger(v)||v<1||v>999)return toast('Inserisci tra 1 e 999 episodi');if(v<z.total&&Object.keys(z.eps).some(k=>Number(k)>v)&&!confirm('Perderai i dati degli episodi rimossi. Confermi?'))return;z.total=v;for(const k of Object.keys(z.eps))if(Number(k)>v)delete z.eps[k];epNum=Math.min(epNum,v);mark(s);drawDetail()};$('deleteSeason').onclick=()=>{if(s.seasons.length===1)return toast('Deve rimanere almeno una stagione');if(!confirm('Eliminare la stagione e i suoi dati?'))return;s.seasons.splice(seasonIdx,1);seasonIdx=0;epNum=1;mark(s);drawDetail()};$('addSeason').onclick=()=>{let n=Number(prompt('Numero episodi della nuova stagione','12'));if(!Number.isInteger(n)||n<1||n>999)return;s.seasons.push({name:'Stagione '+(s.seasons.length+1),total:n,eps:{}});seasonIdx=s.seasons.length-1;epNum=1;mark(s);drawDetail()};$('bulkSeen').onclick=()=>{let n=Number($('bulkTo').value);if(!Number.isInteger(n)||n<1||n>z.total)return toast('Numero episodio non valido');for(let j=1;j<=n;j++){z.eps[j]??={};z.eps[j].watched=true}if(s.status==='todo')s.status='watching';mark(s);drawDetail();toast(`${n} episodi segnati come visti`)};
 }
 function drawEditor(s){const isNew=!s;show(`${head(isNew?'Aggiungi anime':'Modifica anime',isNew?'Una nuova serie nella tua library':'Personalizza i dettagli dell’anime')}<form id="editForm" class="modalBody"><div class="fieldGrid"><label class="field">TITOLO<input required name="title" maxlength="100" value="${safe(s?.title||'')}" placeholder="Titolo dell’anime"></label><label class="field">GENERE<input name="genre" value="${safe(s?.genre||'')}" placeholder="Action · Fantasy"></label></div><label class="field">DESCRIZIONE<textarea name="desc">${safe(s?.desc||'')}</textarea></label><label class="field">URL COPERTINA (OPZIONALE)<input name="cover" type="url" value="${safe(s?.cover||'')}" placeholder="https://.../poster.jpg"><small>Puoi incollare un link a un'immagine per la copertina.</small></label><div class="fieldGrid"><label class="field">LINK CRUNCHYROLL<input name="link" type="url" value="${safe(s?.link||'')}" placeholder="https://www.crunchyroll.com/..."></label><label class="field">LINK VERIFICA ITA<input name="source" type="url" value="${safe(s?.source||'')}" placeholder="Link alla pagina episodio"></label></div><label class="field">NOTE SUL DOPPIAGGIO ITALIANO<textarea name="note">${safe(s?.note||'')}</textarea></label>${isNew?'<label class="field">EPISODI STAGIONE 1<input name="total" type="number" min="1" max="999" value="12" required style="max-width:130px"></label>':''}<div class="softNotice">Il tag ITA viene assegnato solo agli episodi che contrassegni come verificati: non viene dedotto dalla lingua dei sottotitoli.</div><div class="formActions">${!isNew?'<button type="button" class="btn danger" id="removeAnime">Elimina serie</button>':'<span></span>'}<div style="display:flex;gap:8px"><button type="button" class="btn" id="cancelForm">Annulla</button><button type="submit" class="btn primary">Salva anime</button></div></div></form>`);$('cancelForm').onclick=()=>isNew?close():drawDetail();$('editForm').onsubmit=e=>{e.preventDefault();const fd=new FormData(e.target);const vals={title:String(fd.get('title')||'').trim(),genre:String(fd.get('genre')||''),desc:String(fd.get('desc')||''),cover:String(fd.get('cover')||''),link:String(fd.get('link')||''),source:String(fd.get('source')||''),note:String(fd.get('note')||'')};if(!vals.title)return;if(isNew){const total=Number(fd.get('total'));if(!Number.isInteger(total)||total<1||total>999)return toast('Numero episodi non valido');const n={id:'custom_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,7),...vals,colors:'#595959',status:'todo',modified:Date.now(),seasons:[{name:'Stagione 1',total,eps:{}}]};data.unshift(n);active=n.id;seasonIdx=0;epNum=1;save();render();drawDetail();toast('Anime aggiunto')}else{Object.assign(s,vals);mark(s);drawDetail();toast('Modifiche salvate')}};if(!isNew)$('removeAnime').onclick=()=>{if(!confirm(`Eliminare definitivamente “${s.title}”?`))return;data=data.filter(x=>x.id!==s.id);save();close();toast('Anime eliminato')}}
