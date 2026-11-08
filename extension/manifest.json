@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "DUBTRACK Bridge — Crunchyroll (unofficial)",
+  "description": "Importazione di sola lettura da Watchlist e cronologia Crunchyroll a DUBTRACK. Nessuna password o token viene salvato.",
+  "version": "0.1.0",
+  "minimum_chrome_version": "109",
+  "host_permissions": [
+    "https://www.crunchyroll.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://senasalvatore97-dotcom.github.io/dubstack/*"],
+      "js": ["bridge.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
