@@ -4,7 +4,7 @@
 
 Un tracker personale per gli anime, con interfaccia scura/arancione, pensato per desktop e iPhone.
 
-![Anteprima desktop](assets/desktop-preview.png)
+
 
 ## Funzioni
 
@@ -36,10 +36,8 @@ Le etichette sull'audio italiano sono dati del tracker, **non una verifica in te
 
 ```
 index.html                 # Applicazione autonoma
-assets/desktop-preview.png # Anteprima desktop
-assets/mobile-preview.png  # Anteprima mobile
 README.md                  # Documentazione
 .nojekyll                  # Compatibilità con GitHub Pages
 ```
 
-Il progetto non è affiliato a Crunchyroll.
+Le immagini di anteprima non sono necessarie all'esecuzione dell'applicazione. Il progetto non è affiliato a Crunchyroll.
