@@ -558,6 +558,140 @@ input[type=checkbox] {accent-color:#eaeaea}
 }
 
 </style>
+<style id="dubtrack-face-story-v7">
+/* DUBTRACK 7 — Scroll-story hero and expressive mascot */
+@media (prefers-reduced-motion: no-preference) {
+  .dt-intro-ready #homeSections:not(.hide) {
+    position: relative;
+    height: var(--dt-stage-height, 1400px);
+    min-height: 0;
+    margin-bottom: 8px;
+    overflow: visible;
+  }
+  .dt-intro-ready #homeSections:not(.hide) > .hero {
+    position: sticky !important;
+    top: var(--dt-sticky-top, 100px);
+    display: block !important;
+    width:100%;
+    height: var(--dt-hero-height, 680px) !important;
+    min-height:0 !important;
+    margin:0 auto !important;
+    border-radius:var(--dt-hero-radius, 28px) !important;
+    transform: none !important;
+    opacity:1 !important;
+    transition: none !important;
+    isolation:isolate;
+    contain: layout paint;
+    overflow:hidden;
+    background:radial-gradient(ellipse at 50% 43%,#222 0%,#0e0e0e 55%,#060606 100%);
+    border:1px solid #2a2a2a;
+    box-shadow:0 32px 100px #000a;
+    z-index:1;
+  }
+  .dt-intro-ready #homeSections:not(.hide) .heroBG {
+    opacity:.12 !important;
+    transform:none!important;
+    filter:grayscale(1) contrast(1.2) !important;
+  }
+  .dt-intro-ready #homeSections:not(.hide) > .hero .heroVisual {
+    position:absolute !important;
+    top:var(--dt-face-y,50%);
+    left:var(--dt-face-x,50%);
+    width:min(96%, 850px);
+    height:auto;
+    min-height:0 !important;
+    order:unset!important;
+    padding:0 !important;
+    margin:0 !important;
+    transform:translate(-50%,-50%) scale(var(--dt-face-scale,1)) !important;
+    transform-origin:center center;
+    opacity:1 !important;
+    z-index:3;
+    pointer-events:none;
+    will-change:transform;
+  }
+  .dt-intro-ready #homeSections:not(.hide) .heroVisualPanel {
+    width:100%; max-width:none !important; min-height:0; height:auto;
+    border:0;background:none;box-shadow:none;overflow:visible;
+  }
+  .dt-intro-ready #homeSections:not(.hide) .brandHeroLockup {
+    display:flex;align-items:center;justify-content:center;flex-direction:column;
+    gap:clamp(9px,1.8vh,18px);
+    width:100%;
+  }
+  .dt-face-stage {
+    display:block;position:relative;flex:0 0 auto;
+    width:min(58vw, 55vh, 610px);
+    max-width:100%;aspect-ratio:547 / 555;
+    transform:rotate(var(--dt-tilt,0deg));
+    will-change:transform;
+  }
+  .dt-face-stage .heroFace,
+  .dt-face-stage .dt-expressive-svg {
+    display:block;position:absolute;inset:0;width:100%!important;height:100%!important;
+    max-width:none !important;object-fit:contain;
+  }
+  .dt-face-stage .heroFace {opacity:calc(1 - var(--dt-expression-blend,0));filter:none!important;}
+  .dt-face-stage .dt-expressive-svg {opacity:var(--dt-expression-blend,0);filter:none;}
+  .dt-intro-ready #homeSections:not(.hide) .heroWordmark {
+    width:min(68vw,660px)!important;
+    max-width:none!important;
+    filter:drop-shadow(0 16px 24px #0004);
+  }
+  .dt-intro-ready #homeSections:not(.hide) > .hero .heroText {
+    position:absolute !important;z-index:4;
+    top:50%;left:6.2%;bottom:auto;
+    max-width:54%;width:54%;margin:0;
+    padding:0!important;
+    justify-content:center;
+    transform:translateY(calc(-50% + var(--dt-text-shift,25px)))!important;
+    opacity:var(--dt-intro-copy-opacity,0)!important;
+    pointer-events:none;
+    will-change:transform,opacity;
+  }
+  .dt-intro-ready #homeSections:not(.hide) > .hero.dt-intro-actions-visible .heroText {pointer-events:auto;}
+  .dt-intro-ready #homeSections:not(.hide) .heroText h1 {font-size:clamp(29px,3.3vw,54px);letter-spacing:-1.8px;}
+  .dt-intro-ready #homeSections:not(.hide) .heroText p {font-size:clamp(12px,1.1vw,14px);line-height:1.55;}
+  .dt-intro-ready #homeSections:not(.hide) .heroText .heroBtns {gap:9px;}
+  .dt-intro-ready #homeSections:not(.hide) .heroText .btn {min-height:38px;}
+  .dt-intro-scroll-hint {
+    position:absolute;left:50%;bottom:19px;z-index:5;
+    transform:translateX(-50%);display:flex;align-items:center;gap:11px;
+    color:#ccc;font:800 10px/1.2 'DM Sans',sans-serif;
+    letter-spacing:2.6px;text-transform:uppercase;white-space:nowrap;
+    opacity:var(--dt-hint-opacity,1);pointer-events:none;
+  }
+  .dt-intro-scroll-hint span{display:grid;place-items:center;height:27px;width:27px;border:1px solid #888;border-radius:999px;font-size:16px;animation:dt-scroll-nudge 1.7s ease-in-out infinite}
+  @keyframes dt-scroll-nudge{0%,100%{transform:translateY(-3px)}50%{transform:translateY(4px)}}
+  .dt-intro-ready #homeSections:not(.hide) > .hero .heroVisual::before {
+    content:'';position:absolute;inset:5%;z-index:-1;pointer-events:none;
+    border-radius:50%;opacity:calc(1 - var(--dt-intro-progress,0));
+    background:radial-gradient(circle,#fff1 0%,#fff0 60%);
+    filter:blur(25px);
+  }
+}
+@media(max-width:700px) and (prefers-reduced-motion:no-preference){
+  .dt-intro-ready #homeSections:not(.hide) > .hero {background:radial-gradient(ellipse at 50% 28%,#242424,#0e0e0e 67%,#070707);}
+  .dt-intro-ready #homeSections:not(.hide) > .hero .heroVisual {width:100%;}
+  .dt-face-stage{width:min(72vw, 42vh, 375px)}
+  .dt-intro-ready #homeSections:not(.hide) .heroWordmark {width:min(81vw,360px)!important;}
+  .dt-intro-ready #homeSections:not(.hide) > .hero .heroText {
+    top:auto;bottom:33px;left:7%;right:7%;width:86%;max-width:none;
+    transform:translateY(var(--dt-text-shift,25px))!important;
+  }
+  .dt-intro-ready #homeSections:not(.hide) .heroText h1 {font-size:clamp(27px,8vw,35px);line-height:1.08;margin:10px 0 9px;letter-spacing:-.9px;}
+  .dt-intro-ready #homeSections:not(.hide) .heroText p {font-size:11px;line-height:1.45;margin-bottom:13px;}
+  .dt-intro-ready #homeSections:not(.hide) .heroText .eyebrow {font-size:8px;letter-spacing:1.4px;}
+  .dt-intro-ready #homeSections:not(.hide) .heroBtns {flex-wrap:wrap;gap:7px;}
+  .dt-intro-ready #homeSections:not(.hide) .heroBtns .btn {font-size:10px;padding:9px 10px;min-height:37px;}
+  .dt-intro-scroll-hint {bottom:14px;font-size:9px;letter-spacing:1.6px}
+}
+@media (prefers-reduced-motion: reduce) {
+  .dt-face-stage {display:contents;}
+  .dt-expressive-svg,.dt-intro-scroll-hint{display:none!important}
+}
+
+</style>
 </head>
 <body>
 <div class="shell">
@@ -1174,6 +1308,115 @@ $('globalSearch').oninput=e=>{search=e.target.value.toLocaleLowerCase('it');rend
     },{passive:true});
   }
   schedule();
+})();
+
+</script>
+<script id="dubtrack-face-story-v7-js">
+/* DUBTRACK intro — accessible scroll-controlled expressions. Core tracker remains untouched. */
+(() => {
+ 'use strict';
+ const root = document.documentElement;
+ const stage = document.getElementById('homeSections');
+ const hero = stage?.querySelector('.hero');
+ const face = hero?.querySelector('.heroFace');
+ const wordmark = hero?.querySelector('.heroWordmark');
+ if(!stage || !hero || !face || !wordmark) return;
+ const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+ const clamp = (v,min=0,max=1)=>Math.max(min,Math.min(max,v));
+ const mix=(a,b,t)=>a+(b-a)*t;
+ const smooth=t=>{const v=clamp(t);return v*v*(3-2*v)};
+ const tracks=[
+  {at:0,eye:0,tilt:0,brow:0,frown:0},
+  {at:.23,eye:23,tilt:5,brow:-3,frown:0},
+  {at:.49,eye:-23,tilt:-5,brow:4,frown:0},
+  {at:.78,eye:0,tilt:0,brow:10,frown:.8},
+  {at:1,eye:0,tilt:0,brow:13,frown:1}
+ ];
+ function keyframe(t){
+   let i=0;while(i<tracks.length-2 && t>tracks[i+1].at)i++;
+   const a=tracks[i],b=tracks[i+1];const f=smooth((t-a.at)/(b.at-a.at));
+   return {eye:mix(a.eye,b.eye,f),tilt:mix(a.tilt,b.tilt,f),brow:mix(a.brow,b.brow,f),frown:mix(a.frown,b.frown,f)};
+ }
+ const wrap=document.createElement('div');wrap.className='dt-face-stage';
+ face.parentNode.insertBefore(wrap,face);wrap.appendChild(face);
+ wrap.insertAdjacentHTML('beforeend',`<svg class="dt-expressive-svg" viewBox="0 0 547 555" aria-hidden="true" focusable="false">
+ <circle cx="273.5" cy="277.5" r="258.5" fill="#fff"/>
+ <g id="dt-left-brow" fill="#090909"><path d="M76 180 L250 283 L232 297 L68 220 Z"/></g>
+ <g id="dt-right-brow" fill="#090909"><path d="M470 180 L297 283 L313 297 L480 220 Z"/></g>
+ <path fill="#080808" d="M100 251 Q156 266 235 305 Q227 362 172 362 Q110 349 100 287 Z"/>
+ <path fill="#080808" d="M447 251 Q389 266 313 305 Q322 362 375 362 Q436 349 447 287 Z"/>
+ <g id="dt-left-pupil"><ellipse cx="175" cy="299" rx="28" ry="32" fill="#fff"/><ellipse cx="187" cy="310" rx="15" ry="18" fill="#090909"/></g>
+ <g id="dt-right-pupil"><ellipse cx="373" cy="299" rx="28" ry="32" fill="#fff"/><ellipse cx="385" cy="310" rx="15" ry="18" fill="#090909"/></g>
+ <path id="dt-smirk" d="M155 405 Q281 413 411 374 Q389 466 295 471 Q200 470 155 405 Z" fill="#080808"/>
+ <path id="dt-smirk-tooth" d="M176 406 Q285 418 385 393 Q362 425 310 429 Q244 434 176 406Z" fill="#fff"/>
+ <path id="dt-frown" d="M178 451 Q275 380 371 446" stroke="#080808" stroke-width="27" stroke-linecap="round" fill="none" opacity="0"/>
+ </svg>`);
+ const svg=wrap.querySelector('.dt-expressive-svg');
+ const left=svg.querySelector('#dt-left-pupil'),right=svg.querySelector('#dt-right-pupil');
+ const bl=svg.querySelector('#dt-left-brow'),br=svg.querySelector('#dt-right-brow');
+ const smile=svg.querySelector('#dt-smirk'),tooth=svg.querySelector('#dt-smirk-tooth'),frown=svg.querySelector('#dt-frown');
+ const hint=document.createElement('div');hint.className='dt-intro-scroll-hint';hint.setAttribute('aria-hidden','true');hint.innerHTML='SCORRI PER ESPLORARE <span>↓</span>';hero.appendChild(hint);
+ let active=false,frame=0,layout=null;
+ const mobile=()=>window.innerWidth<=700;
+ function measure(){
+   const small=mobile();
+   const header=document.querySelector('.topbar')?.getBoundingClientRect().height||86;
+   const top=header+(small?7:11);
+   const viewport=window.innerHeight;
+   const tall=Math.max(small?510:540,viewport-top-(small?84:24));
+   const compact=small?Math.min(505,Math.max(433,viewport*.61)):Math.min(515,Math.max(410,viewport*.54));
+   const travel=Math.max(small?420:480,Math.min(viewport*(small?.76:.84),820));
+   const stageHeight=tall+travel+Math.max(18,compact*.19);
+   layout={top,tall,compact,travel,stageHeight,small};
+   stage.style.setProperty('--dt-stage-height',`${stageHeight}px`);
+   stage.style.height=`${stageHeight}px`;
+   hero.style.setProperty('--dt-sticky-top',`${top}px`);
+   render();
+ }
+ function render(){
+  frame=0;
+  if(!active||!layout||stage.classList.contains('hide'))return;
+  const sectionY=stage.getBoundingClientRect().top+window.scrollY;
+  const start=sectionY-layout.top;
+  const progress=clamp((window.scrollY-start)/layout.travel);
+  const eased=smooth(progress);
+  const h=mix(layout.tall,layout.compact,eased);
+  const fs= mix(1,layout.small?.54:.55,eased);
+  const fx=mix(50,layout.small?50:77,eased);
+  const fy=mix(50,layout.small?28:49,eased);
+  const text=smooth((progress-(layout.small?.43:.35))/.35);
+  const hintOpacity=1-smooth(progress/.24);
+  hero.style.setProperty('--dt-intro-progress',progress.toFixed(4));
+  hero.style.setProperty('--dt-hero-height',`${h.toFixed(1)}px`);
+  hero.style.setProperty('--dt-hero-radius',`${mix(30,19,eased).toFixed(1)}px`);
+  hero.style.setProperty('--dt-face-x',`${fx.toFixed(2)}%`);
+  hero.style.setProperty('--dt-face-y',`${fy.toFixed(2)}%`);
+  hero.style.setProperty('--dt-face-scale',fs.toFixed(3));
+  hero.style.setProperty('--dt-intro-copy-opacity',text.toFixed(3));
+  hero.style.setProperty('--dt-text-shift',`${((1-text)*27).toFixed(1)}px`);
+  hero.style.setProperty('--dt-hint-opacity',hintOpacity.toFixed(3));
+  hero.classList.toggle('dt-intro-actions-visible',text>.87);
+  const e=keyframe(progress);
+  wrap.style.setProperty('--dt-tilt',`${e.tilt.toFixed(2)}deg`);
+  wrap.style.setProperty('--dt-expression-blend',smooth((progress-.05)/.15).toFixed(3));
+  left.setAttribute('transform',`translate(${e.eye.toFixed(1)},0)`);
+  right.setAttribute('transform',`translate(${e.eye.toFixed(1)},0)`);
+  bl.setAttribute('transform',`rotate(${(-e.brow).toFixed(1)} 237 286)`);
+  br.setAttribute('transform',`rotate(${(e.brow).toFixed(1)} 310 286)`);
+  smile.setAttribute('opacity',String(1-e.frown));tooth.setAttribute('opacity',String(1-e.frown));
+  frown.setAttribute('opacity',String(e.frown));
+ }
+ function schedule(){if(frame||!active)return;frame=requestAnimationFrame(render)}
+ function setActive(){
+   active=!mq.matches;
+   root.classList.toggle('dt-intro-ready',active);
+   if(active) measure();
+   else{stage.style.removeProperty('height');stage.style.removeProperty('--dt-stage-height');hero.classList.remove('dt-intro-actions-visible');}
+ }
+ window.addEventListener('scroll',schedule,{passive:true});
+ window.addEventListener('resize',()=>{if(active)measure()},{passive:true});
+ if(mq.addEventListener)mq.addEventListener('change',setActive);
+ setActive();
 })();
 
 </script>
