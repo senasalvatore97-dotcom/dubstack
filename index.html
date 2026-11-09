@@ -433,6 +433,131 @@ input[type=checkbox] {accent-color:#eaeaea}
 .seriesVerifyLink:hover,.seriesVerifyLink:focus-visible{background:#343434;border-color:#8a8a8a;color:#fff}
 .verifySeriesBtn{border-color:#5a5a5a;background:#242424;color:#fff}
 </style>
+<style id="dubtrack-scroll-motion">
+/* DUBTRACK Motion System — depth, reveal and scroll effects; palette remains monochrome. */
+:root { --motion-ease: cubic-bezier(.18,.78,.18,1); --motion-quiet: cubic-bezier(.2,.65,.3,1); }
+
+/* The scroll reading indicator lives above the header, outside all other hit targets. */
+.dt-scroll-track {
+  position:fixed;z-index:80;top:0;left:0;width:100%;height:3px;
+  background:rgba(255,255,255,.035);pointer-events:none;
+}
+.dt-scroll-track .dt-scroll-fill {
+  display:block;height:100%;width:100%;transform:scaleX(var(--dt-scroll-progress,0));transform-origin:left;
+  background:linear-gradient(90deg,#777,#f5f5f5);box-shadow:0 0 16px rgba(255,255,255,.38);
+  will-change:transform;
+}
+
+/* Hero: 3 independently moving layers, with edges clipped in the existing container. */
+.motion-ready .hero {isolation:isolate;contain:paint;}
+.motion-ready .heroBG {
+  transform:translate3d(0,var(--dt-bg-y,0px),0) scale(1.11);
+  transform-origin:center;will-change:transform;
+}
+.motion-ready .heroText {
+  transform:translate3d(0,var(--dt-copy-y,0px),0);
+  opacity:var(--dt-copy-opacity,1);will-change:transform,opacity;
+}
+.motion-ready .heroVisual {
+  transform:translate3d(0,var(--dt-mascot-y,0px),0) scale(var(--dt-mascot-scale,1));
+  transform-origin:center;will-change:transform;
+}
+.motion-ready .brandHeroLockup {filter:drop-shadow(0 12px 25px rgba(255,255,255,.045));}
+.motion-ready .hero::after {
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(450px 300px at var(--dt-glow-x,80%) var(--dt-glow-y,25%),rgba(255,255,255,.085),transparent 70%);
+  opacity:.9;
+}
+
+/* Scroll entrances: left-aligned sections and lightly staggered items. */
+.motion-ready .motion-item {transition:
+  opacity .82s var(--motion-ease) var(--motion-delay,0ms),
+  transform .82s var(--motion-ease) var(--motion-delay,0ms),
+  filter .82s var(--motion-ease) var(--motion-delay,0ms);
+}
+.motion-ready .motion-item:not(.motion-in) {
+  opacity:0;
+  transform:translate3d(0,var(--dt-enter-y,34px),0) scale(var(--dt-enter-scale,.985));
+  filter:blur(5px);
+}
+.motion-ready .motion-item.motion-in {opacity:1;filter:none;}
+.motion-ready .hero.motion-item:not(.motion-in) {transform:translate3d(0,18px,0) scale(.99);}
+.motion-ready .anime.motion-item {animation:none!important;}
+.motion-ready .sectionBar.motion-item:not(.motion-in) {transform:translate3d(0,20px,0);}
+.motion-ready .stats .stat.motion-item:not(.motion-in) {transform:translate3d(0,24px,0) scale(.96);}
+.motion-ready .continueCard.motion-item:not(.motion-in) {transform:translate3d(0,28px,0) scale(.975);}
+.motion-ready .spotlightShell.motion-item:not(.motion-in) {transform:translate3d(0,26px,0) scale(.98);}
+
+/* Image depth: only the posters move. Their original colours are preserved. */
+.motion-ready .anime .cover,
+.motion-ready .continueCard .continuePic {overflow:hidden;isolation:isolate;}
+.motion-ready .anime .cover img,
+.motion-ready .continueCard .continuePic img {
+  transform:translate3d(0,var(--dt-art-y,0px),0) scale(calc(var(--dt-art-scale,1.045) + var(--dt-hover-scale,0)));
+  transform-origin:center;filter:none!important;
+  transition:transform .2s linear;
+  will-change:transform;
+}
+@media (hover:hover) and (pointer:fine) {
+ .motion-ready .anime.motion-item.motion-in:hover {
+   transform:translateY(-6px) perspective(1000px) rotateX(var(--dt-tilt-x,0deg)) rotateY(var(--dt-tilt-y,0deg));
+   box-shadow:0 22px 65px rgba(0,0,0,.58),0 0 0 1px rgba(255,255,255,.22);
+   transition:transform .22s var(--motion-quiet),box-shadow .22s ease,border-color .22s ease;
+ }
+ .motion-ready .anime:hover {--dt-hover-scale:.065;}
+ .motion-ready .continueCard:hover {--dt-hover-scale:.045;}
+}
+/* Horizontal line gently draws in under section headers when revealed. */
+.motion-ready .sectionBar .sectionTitle {position:relative;display:inline-block;}
+.motion-ready .sectionBar .sectionTitle::after {
+  content:"";position:absolute;left:0;bottom:-7px;width:42%;height:1px;
+  background:linear-gradient(90deg,rgba(255,255,255,.65),transparent);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 1s var(--motion-ease) .14s;
+}
+.motion-ready .sectionBar.motion-in .sectionTitle::after {transform:scaleX(1);}
+.motion-ready .stats .stat .big {font-variant-numeric:tabular-nums;}
+
+/* Spotlight stays touch/swipe friendly: only its container entrance and quiet light move. */
+.motion-ready .spotlightShell {position:relative;isolation:isolate;}
+.motion-ready .spotlightShell::before {
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;z-index:-1;
+  background:radial-gradient(470px 360px at 78% var(--dt-spot-y,48%),rgba(255,255,255,.065),transparent 75%);
+}
+
+/* Scroll-return affordance, placed above the iOS bottom navigation. */
+.dt-back-top {
+  position:fixed;right:23px;bottom:26px;z-index:6;
+  display:grid;place-items:center;width:46px;height:46px;border-radius:15px;
+  border:1px solid #535353;background:rgba(25,25,25,.94);color:#fff;
+  font-size:22px;line-height:1;box-shadow:0 14px 38px #0009;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  opacity:0;transform:translateY(18px) scale(.86);pointer-events:none;
+  transition:opacity .3s ease,transform .42s var(--motion-ease),background .2s ease;
+}
+.dt-back-top.dt-back-visible {opacity:1;transform:none;pointer-events:auto;}
+.dt-back-top:hover {background:#393939;}
+.dt-back-top:focus-visible {outline:2px solid #fff;outline-offset:3px;}
+@media(max-width:700px){
+  .dt-back-top {right:16px;bottom:calc(92px + env(safe-area-inset-bottom));width:43px;height:43px;border-radius:13px;}
+  .motion-ready .motion-item {transition-duration:.65s;}
+  .motion-ready .heroBG {transform:translate3d(0,var(--dt-bg-y,0px),0) scale(1.075);}
+  .motion-ready .heroVisual {transform:translate3d(0,var(--dt-mascot-y,0px),0) scale(var(--dt-mascot-scale,1));}
+}
+@media(prefers-reduced-motion:reduce){
+  .motion-ready .motion-item,.motion-ready .motion-item:not(.motion-in),
+  .motion-ready .heroBG,.motion-ready .heroText,.motion-ready .heroVisual,
+  .motion-ready .anime .cover img,.motion-ready .continueCard .continuePic img,
+  .motion-ready .sectionBar .sectionTitle::after,
+  .dt-scroll-track .dt-scroll-fill,.dt-back-top {
+    animation:none!important;transition:none!important;filter:none!important;
+    opacity:1!important;transform:none!important;will-change:auto!important;
+  }
+  .dt-back-top:not(.dt-back-visible){opacity:0!important;pointer-events:none;}
+  .motion-ready .sectionBar .sectionTitle::after {display:none;}
+}
+
+</style>
 </head>
 <body>
 <div class="shell">
@@ -861,6 +986,196 @@ function drawSync(){const tabs=[['overview','Account'],['direct','Sync diretta (
 $('backupFile').onchange=async(e)=>{const f=e.target.files?.[0];if(!f)return;try{if(f.size>8_000_000)throw Error('File troppo grande');const raw=JSON.parse(await f.text());const arr=Array.isArray(raw)?raw:raw.series;if(!Array.isArray(arr)||arr.length>3000||!arr.every(s=>typeof s.id==='string'&&typeof s.title==='string'&&Array.isArray(s.seasons)&&s.seasons.length&&s.seasons.every(z=>Number.isInteger(z.total)&&z.total>=1&&z.total<=999&&z.eps&&typeof z.eps==='object')))throw Error('Formato JSON non valido');if(!confirm(`Importare ${arr.length} anime e SOSTITUIRE la lista attuale?`))return;data=arr;save();render();close();toast('Backup importato con successo')}catch(err){alert('Impossibile importare: '+err.message)}finally{e.target.value=''}};
 $('globalSearch').oninput=e=>{search=e.target.value.toLocaleLowerCase('it');render()};$('sort').onchange=render;$('syncBtn').onclick=()=>openSync();$('sideSync').onclick=()=>openSync();$('heroSync').onclick=()=>openSync();$('footerSync').onclick=()=>openSync('watchlist');$('backupBtn').onclick=()=>openSync('backup');$('addBtn').onclick=()=>{active=null;drawEditor(null)};$('csvBtn').onclick=exportCsv;$('heroExplore').onclick=()=>{$('librarySection').scrollIntoView({behavior:'smooth',block:'start'})};$('continueAll').onclick=()=>setView('watching');$('overlay').onclick=e=>{if(e.target===$('overlay'))close()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('overlay').classList.contains('show'))close()});render();setTimeout(bridgePing,150);
 })();
+</script>
+<script id="dubtrack-scroll-motion-js">
+/* DUBTRACK Motion — progressive enhancement only. No tracker data or swipe handlers touched. */
+(() => {
+  'use strict';
+  const root = document.documentElement;
+  const body = document.body;
+  const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+  const ioSupported = typeof IntersectionObserver === 'function';
+  const clamp = (min, value, max) => Math.min(max, Math.max(min, value));
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  const hero = document.querySelector('.hero');  const cardGrid = document.getElementById('cards');
+  const seen = new WeakSet();
+  const observedArt = new WeakSet();
+  const activeArt = new Set();
+  let framesScheduled = false;
+  let revealObserver, artObserver;
+  let rafCounts = new WeakMap();
+  const enabled = () => !motionPreference.matches;
+
+  const progress = document.createElement('div');
+  progress.className = 'dt-scroll-track';
+  progress.setAttribute('aria-hidden', 'true');
+  progress.innerHTML = '<span class="dt-scroll-fill"></span>';
+  const toTop = document.createElement('button');
+  toTop.type = 'button';
+  toTop.className = 'dt-back-top';
+  toTop.textContent = '↑';
+  toTop.setAttribute('aria-label', 'Torna all’inizio della pagina');
+  toTop.title = 'Torna all’inizio';
+  toTop.addEventListener('click', () => window.scrollTo({ top:0,behavior:enabled()?'smooth':'auto' }));
+  body.append(progress, toTop);
+
+  const countUp = item => {
+    if (!enabled()) return;
+    const label = item.querySelector('.big');
+    if (!label) return;
+    const target = Number(label.textContent.trim());
+    if (!Number.isSafeInteger(target) || target < 1 || target > 100000) return;
+    const prior = rafCounts.get(label);
+    if (prior) cancelAnimationFrame(prior);
+    const start = performance.now(), duration = clamp(500, 550 + target * 4, 1000);
+    const step = now => {
+      if (!label.isConnected) return;
+      const t = clamp(0, (now-start)/duration, 1);
+      label.textContent = String(Math.round(target * ease(t)));
+      if (t < 1) rafCounts.set(label,requestAnimationFrame(step));
+      else label.textContent = String(target);
+    };
+    rafCounts.set(label,requestAnimationFrame(step));
+  };
+
+  if (ioSupported) {
+    revealObserver = new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('motion-in');
+        if (entry.target.matches('.stat')) countUp(entry.target);
+        revealObserver.unobserve(entry.target);
+      }
+    },{rootMargin:'0px 0px -20px 0px',threshold:0.075});
+    artObserver = new IntersectionObserver(entries => {
+      for(const entry of entries){
+        if(entry.isIntersecting) activeArt.add(entry.target);
+        else activeArt.delete(entry.target);
+      }
+      schedule();
+    },{rootMargin:'140px 0px 140px 0px',threshold:0});
+  }
+
+  function register() {
+    if (!ioSupported || !enabled()) return;
+    const targets = [
+      ...document.querySelectorAll('.hero,.stats .stat,.sectionBar,.continueCard,.anime,.spotlightShell,.libraryHead,.filterLine,.foot,.hint')
+    ];
+    let index=0;
+    for(const element of targets) {
+      if(seen.has(element))continue;
+      seen.add(element);
+      element.classList.add('motion-item');
+      const stagger = element.matches('.anime') ? (index++%5)*64 :
+        element.matches('.stat') ? ([...element.parentElement.children].indexOf(element)%4)*95 :
+        element.matches('.continueCard') ? ([...element.parentElement.children].indexOf(element)%3)*85 : 0;
+      element.style.setProperty('--motion-delay',`${stagger}ms`);
+      revealObserver.observe(element);
+    }
+    document.querySelectorAll('.anime,.continueCard').forEach(card=>{
+      if(observedArt.has(card))return;
+      observedArt.add(card);
+      artObserver.observe(card);
+    });
+    schedule();
+  }
+
+  function update() {
+    framesScheduled = false;
+    const maxScroll = Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+    progress.style.setProperty('--dt-scroll-progress',String(clamp(0,window.scrollY/maxScroll,1)));
+    toTop.classList.toggle('dt-back-visible',window.scrollY>550);
+    if (!enabled()) return;
+
+    const vp = window.innerHeight || 800;
+    if (hero && hero.isConnected) {
+      const r = hero.getBoundingClientRect();
+      if(r.bottom > -180 && r.top < vp+180){
+        const t = clamp(0,-r.top/Math.max(r.height,1),1.25);
+        const factor = window.innerWidth<=700? .56:1;
+        hero.style.setProperty('--dt-bg-y',`${Math.round(t*64*factor)}px`);
+        hero.style.setProperty('--dt-copy-y',`${Math.round(t*-24*factor)}px`);
+        hero.style.setProperty('--dt-copy-opacity',String(clamp(.58,1-t*.24,1)));
+        hero.style.setProperty('--dt-mascot-y',`${Math.round(t*42*factor)}px`);
+        hero.style.setProperty('--dt-mascot-scale',String((1-clamp(0,t,1)*.07).toFixed(3)));
+      }
+    }
+
+    for(const card of [...activeArt]){
+      if(!card.isConnected){activeArt.delete(card);continue;}
+      const img=card.querySelector('.cover img,.continuePic img');
+      if(!img) continue;
+      const r=card.getBoundingClientRect();
+      const distance=clamp(-1,(r.top+r.height/2-vp/2)/Math.max(vp*.7,1),1);
+      const scale=1.055+(1-Math.abs(distance))*.027;
+      card.style.setProperty('--dt-art-y',`${Math.round(-distance*11)}px`);
+      card.style.setProperty('--dt-art-scale',scale.toFixed(3));
+    }
+    const spot = document.querySelector('.spotlightShell');
+    if (spot && spot.isConnected) {
+      const r=spot.getBoundingClientRect();
+      if(r.bottom>-100 && r.top<vp+100){
+        spot.style.setProperty('--dt-spot-y',`${clamp(20,Math.round((vp/2-r.top)/Math.max(r.height,1)*100),80)}%`);
+      }
+    }
+  }
+  function schedule() {
+    if(framesScheduled)return;
+    framesScheduled=true;
+    requestAnimationFrame(update);
+  }
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('resize',schedule,{passive:true});
+
+  // Pointer depth is gentle and never captures gestures, so the swipe tracker works normally.
+  if(cardGrid && matchMedia('(hover:hover) and (pointer:fine)').matches){
+    cardGrid.addEventListener('pointermove',event=>{
+      const card=event.target.closest('.anime');
+      if(!card || event.pointerType==='touch' || !enabled())return;
+      const r=card.getBoundingClientRect();
+      const x=clamp(-1,(event.clientX-r.left)/r.width*2-1,1);
+      const y=clamp(-1,(event.clientY-r.top)/r.height*2-1,1);
+      card.style.setProperty('--dt-tilt-x',`${(-y*2.2).toFixed(2)}deg`);
+      card.style.setProperty('--dt-tilt-y',`${(x*2.2).toFixed(2)}deg`);
+    },{passive:true});
+    cardGrid.addEventListener('pointerout',event=>{
+      const card=event.target.closest('.anime');
+      if(card && !card.contains(event.relatedTarget)){
+        card.style.removeProperty('--dt-tilt-x');
+        card.style.removeProperty('--dt-tilt-y');
+      }
+    },{passive:true});
+  }
+
+  if(ioSupported && enabled())root.classList.add('motion-ready');
+  const observedContainers = ['stats','cards','continueRow','spotlightContent','chips','homeSections'];
+  const domObserver = new MutationObserver(()=>{
+    if(ioSupported && enabled())register();
+    schedule();
+  });
+  for(const id of observedContainers){
+    const el=document.getElementById(id);
+    if(el)domObserver.observe(el,{childList:true,subtree:false});
+  }
+  if(ioSupported && enabled())register();
+  if(typeof motionPreference.addEventListener==='function')motionPreference.addEventListener('change',()=>{
+    root.classList.toggle('motion-ready',enabled()&&ioSupported);
+    if(enabled()&&ioSupported)register();
+    else document.querySelectorAll('.motion-item').forEach(el=>el.classList.add('motion-in'));
+    schedule();
+  });
+
+  if(hero && matchMedia('(hover:hover) and (pointer:fine)').matches){
+    hero.addEventListener('pointermove',event=>{
+      if(!enabled())return;
+      const r=hero.getBoundingClientRect();
+      hero.style.setProperty('--dt-glow-x', `${Math.round((event.clientX-r.left)/r.width*100)}%`);
+      hero.style.setProperty('--dt-glow-y', `${Math.round((event.clientY-r.top)/r.height*100)}%`);
+    },{passive:true});
+  }
+  schedule();
+})();
+
 </script>
 </body>
 </html>
